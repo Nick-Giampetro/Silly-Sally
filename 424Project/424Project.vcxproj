@@ -140,11 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="424Project.cpp" />
+    <ClCompile Include="engine.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Sally.cpp" />
     <ClCompile Include="Terrain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Sally.h" />
     <ClInclude Include="Terrain.h" />
