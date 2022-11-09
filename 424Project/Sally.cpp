@@ -2,12 +2,12 @@
 
 Sally::Sally()
 {
-	std::cout << "Sally Lives!" << std::endl;
+	cout << "Sally Lives!" << endl;
 }
 
 Sally::~Sally()
 {
-	std::cout << "We lost Sally!" << std::endl;
+	cout << "We lost Sally!" << endl;
 }
 
 void Sally::sprite() {
