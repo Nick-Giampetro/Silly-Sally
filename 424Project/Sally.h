@@ -1,10 +1,9 @@
 #pragma once
 
 #include<iostream>
-#include "Entity.h"
 using namespace std;
 
-class Sally
+class Sally : public Entity
 {
 public:
 	Sally();

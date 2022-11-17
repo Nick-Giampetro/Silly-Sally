@@ -11,5 +11,5 @@ Sally::~Sally()
 }
 
 void Sally::sprite() {
-	cout << " /\\ \n || \n || \n || \n<||> " << endl;
+	cout << " /\\ \n || \n || \n || \n<||> " << endl;		//this is not actually going to work we need to index it into an array
 }

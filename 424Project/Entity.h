@@ -5,8 +5,15 @@ public:
 	void setPos(int,int);
 	int getPosX();
 	int getPosY();
+	
+	void setVel(int, int);
+	int getVelX();
+	int getVelY();
+
+	// need to think about how this is going to work
+	// void defineShape();
 
 private:
-	int x,y;
+	int pX, pY, vX, vY;
 };
 
