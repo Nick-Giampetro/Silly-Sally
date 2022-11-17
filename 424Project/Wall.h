@@ -5,5 +5,6 @@ class Wall :
 {
 public:
     Wall();
+    Wall(int,int);
 };
 

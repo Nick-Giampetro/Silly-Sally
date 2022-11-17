@@ -1,5 +1,10 @@
 #include "Entity.h"
 
+Entity::Entity() {
+
+}
+
+
 // postition functions
 void Entity::setPos(int I, int J) {
 	pX = I;
