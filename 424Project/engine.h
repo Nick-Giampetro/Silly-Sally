@@ -16,9 +16,10 @@ class engine
 public:
 	engine();
 	
-
+	void frameGen();
 
 	void frameStepper();
+
 
 private:
 	vector<Terrain> obstacles;

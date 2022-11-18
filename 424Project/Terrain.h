@@ -8,6 +8,9 @@ class Terrain : public Entity
 {
 public:
 
+
+	void defineShape();
+
 	//void sprite();
 
 private:

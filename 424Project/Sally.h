@@ -14,7 +14,9 @@ public:
 	Sally();
 	~Sally();
 
-	void sprite();
+	void defineShape();
+
+	char spriteData(int,int);
 
 private:
 	char img[sallySizeI][sallySizeJ];

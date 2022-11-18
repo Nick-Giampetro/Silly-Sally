@@ -1,7 +1,10 @@
 #include "Entity.h"
 
 Entity::Entity() {
-
+	pX = 0;
+	pY = 0;
+	vX = 0;
+	vY = 0;
 }
 
 

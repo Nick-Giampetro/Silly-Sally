@@ -4,6 +4,8 @@ Sally::Sally()
 {
 	cout << "Sally Lives!" << endl;
 
+	this->setVel(1, 0);
+
 	for (int i = 0; i < sallySizeI; i++)
 		for (int j = 0; j < sallySizeJ; j++)
 			img[i][j] = ' ';
@@ -21,6 +23,6 @@ Sally::~Sally()
 	cout << "We lost Sally!" << endl;
 }
 
-void Sally::sprite() {
-	
+char Sally::spriteData(int,int) {
+	return img
 }
