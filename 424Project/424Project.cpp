@@ -10,7 +10,5 @@ int main()
 {
     Sally Player1;
 
-    Player1.sprite();
-
 }
 

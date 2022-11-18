@@ -10,6 +10,9 @@ using namespace std;
 
 class engine
 {
+
+	static const int frameSize = 100;
+
 public:
 	engine();
 	
@@ -22,6 +25,9 @@ private:
 	vector<Wall> bounds;
 	Sally player;
 
-	int frameStep,frameSize = 100;
+	int frameStep = 0;
+	
+	char frameImg[frameSize][frameSize];
+
 };
 
