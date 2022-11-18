@@ -11,7 +11,8 @@ public:
 
 	void defineShape();
 
-	//void sprite();
+	char spriteData();
+	void setSprite();
 
 private:
 

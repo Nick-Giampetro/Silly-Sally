@@ -15,8 +15,8 @@ public:
 	// need to think about how this is going to work
 	virtual void defineShape() = 0;
 	virtual char spriteData(int, int) = 0;
+	virtual void setSprite() = 0;
 
 private:
 	int pX, pY, vX, vY;
 };
-

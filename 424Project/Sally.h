@@ -15,7 +15,7 @@ public:
 	~Sally();
 
 	void defineShape();
-
+	void setSprite();
 	char spriteData(int,int);
 
 private:
