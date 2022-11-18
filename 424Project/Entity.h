@@ -2,6 +2,8 @@
 class Entity
 {
 public:
+	Entity();
+
 	void setPos(int,int);
 	int getPosX();
 	int getPosY();

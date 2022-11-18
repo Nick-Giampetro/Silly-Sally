@@ -11,13 +11,15 @@ using namespace std;
 class engine
 {
 public:
-	void setEntites(Wall,Terrain,Sally);
+	engine();
 	
+
 
 	void frameStepper();
 
 private:
-	vector<Terrain> Terrain;
+	vector<Terrain> obstacles;
+	vector<Wall> bounds;
 	Sally player;
 
 	int frameStep,frameSize = 100;
