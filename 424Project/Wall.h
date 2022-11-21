@@ -10,6 +10,7 @@ public:
     char spriteData();
     void setSprite();
     void defineShape();
-
+private:
+    char wallSprite;
 };
 
