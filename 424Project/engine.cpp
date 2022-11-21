@@ -27,3 +27,7 @@ void engine::frameGen() {
 void engine::frameStepper() {
 
 }
+
+int engine::getFrameSize() {
+	return frameSize;
+}

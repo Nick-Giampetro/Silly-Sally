@@ -20,6 +20,8 @@ public:
 
 	void frameStepper();
 
+	int getFrameSize();
+
 
 private:
 	vector<Terrain> obstacles;
