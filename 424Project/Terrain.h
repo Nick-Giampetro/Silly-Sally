@@ -10,7 +10,6 @@ public:
 
 
 	void defineShape();
-
 	char spriteData();
 	void setSprite();
 

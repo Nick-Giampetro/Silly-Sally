@@ -7,7 +7,6 @@ Sally::Sally()
 	this->setVel(1, 0);
 	this->setSprite();
 	
-
 }
 
 Sally::~Sally()
@@ -15,9 +14,12 @@ Sally::~Sally()
 	cout << "We lost Sally!" << endl;
 }
 
+void Sally::defineShape() {
+	
+}
 
-
-char Sally::spriteData(int,int) {
+char Sally::spriteData(int ,int) {
+	
 	return img[][];
 }
 

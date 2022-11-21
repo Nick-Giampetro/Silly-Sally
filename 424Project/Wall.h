@@ -5,9 +5,10 @@ class Wall :
 {
 public:
     Wall();
+    ~Wall();
     Wall(int,int);
 
-    char spriteData();
+    char spriteData(int, int);
     void setSprite();
     void defineShape();
 

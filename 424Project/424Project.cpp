@@ -6,6 +6,8 @@
 #include"Terrain.h"
 #include <iostream>
 
+static const int frameSize = 100;
+
 int main()
 {
     Sally Player1;

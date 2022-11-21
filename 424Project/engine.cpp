@@ -14,11 +14,18 @@ engine::engine() {
 	Wall temp2(frameSize,0);
 	bounds.push_back(temp1);
 	bounds.push_back(temp2);
+	temp1.~Wall();
+	temp2.~Wall();
+
+	Terrain temp1;
+	obstacles
+
 
 	// need to figure out the terrain stuff still
 	// obstacles.push_back()
 
 }
+
 
 void engine::frameGen() {
 

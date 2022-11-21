@@ -20,6 +20,7 @@ public:
 
 private:
 	char img[sallySizeI][sallySizeJ];
+	int imgPos[sallySizeI][sallySizeJ];
 
 	
 };
