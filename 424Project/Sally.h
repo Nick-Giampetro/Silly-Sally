@@ -14,6 +14,7 @@ public:
 	~Sally();
 
 	bool isLocatedAt(int,int);
+
 	void defineShape();
 	void setSprite();
 	char spriteData(int,int);

@@ -30,5 +30,7 @@ private:
 	
 	char frameImg[frameSize][frameSize];
 
+	bool isAlive = true;
+
 };
 

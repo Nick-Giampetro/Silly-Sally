@@ -3,10 +3,6 @@
 
 //sets starting entities
 engine::engine() {
-	
-	for (int i = 0; i < frameSize; i++)
-		for (int j = 0; j < frameSize; j++)
-			frameImg[i][j] = ' ';
 
 	player.setPos(frameSize / 2, frameSize - frameSize / 20);
 
@@ -28,11 +24,20 @@ engine::engine() {
 void engine::frameGen() {
 	for (int i = 0; i < frameSize; i++)
 		for (int j = 0; j < frameSize; j++) {
-
+			frameImg[i][j] = bounds[0].getSprite(i, j);
+			frameImg[i][j] = bounds[1].getSprite(i, j);
+			for (int k = 0; k < obstacles.size(); k++)
+				frameImg[i][j] = obstacles[k].getSprite(i, j);
+			if (frameImg[i][j] == ' ')
+				frameImg[i][j] = player.getSprite(i, j);
+			else {
+				isAlive = false;
+				return;
+			}
 		}
 
 }
 
 void engine::frameStepper() {
-
+	frameStep++;
 }
