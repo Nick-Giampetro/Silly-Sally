@@ -35,7 +35,11 @@ void Sally::defineShape() {
 
 
 char Sally::spriteData(int I,int J) {
-	return img[I][J];
+	for (int i = 0; i < sallySizeI; i++)
+		for (int j = 0; j < sallySizeJ; j++) {
+			if (imgPos[i][j][0] == I && imgPos[i][j][1] == J)
+				return img[i][j];
+		}
 }
 
 void Sally::setSprite() {
