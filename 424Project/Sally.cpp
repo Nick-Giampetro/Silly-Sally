@@ -14,13 +14,28 @@ Sally::~Sally()
 	cout << "We lost Sally!" << endl;
 }
 
-void Sally::defineShape() {
+bool Sally::isLocatedAt(int I, int J) {
 	
+	for (int i = 0; i < sallySizeI; i++)
+		for (int j = 0; j < sallySizeJ; j++) {
+			if (imgPos[i][j][0] == I && imgPos[i][j][1] == J)
+				return true;
+		}
+
+	return false;
 }
 
-char Sally::spriteData(int ,int) {
-	
-	return img[][];
+void Sally::defineShape() {
+	for (int i = 0; i < sallySizeI; i++)
+		for (int j = 0; j < sallySizeJ; j++) {
+			imgPos[i][j][0] = this->getPosX() + i;
+			imgPos[i][j][1] = this->getPosY() + j;
+		}
+}
+
+
+char Sally::spriteData(int I,int J) {
+	return img[I][J];
 }
 
 void Sally::setSprite() {

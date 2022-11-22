@@ -12,6 +12,11 @@ Wall::Wall(int x, int y) {
 	this->setPos(x, y);
 }
 
+
+bool Wall::isLocatedAt(int, int) {
+
+}
+
 char Wall::spriteData(int ,int) {
 	return ' ';
 }

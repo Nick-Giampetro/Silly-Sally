@@ -6,6 +6,8 @@ Terrain::Terrain() {
 	//itial hole spawn at hole number 3 (the middle of the screen) with line type 1
 	holeType = 3;
 	lineType = 1;
+
+	setPos(frameSize / 2, 0);
 }
 
 Terrain::Terrain(int prevHole) {
@@ -25,11 +27,15 @@ Terrain::~Terrain() {
 	;
 }
 
+bool isLocatedAt(int, int) {
+
+}
+
 void Terrain::defineShape() {
 
 }
 
-char Terrain::spriteData() {
+char Terrain::spriteData(int,int) {
 
 	//defines the type of line that will print once the game is played for so long, starts at case 1
 	switch (getLineType())

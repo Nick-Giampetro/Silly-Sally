@@ -12,6 +12,8 @@ Entity::Entity() {
 void Entity::setPos(int I, int J) {
 	pX = I;
 	pY = J;
+
+	this->defineShape();
 }
 int Entity::getPosX() {
 	return pX;

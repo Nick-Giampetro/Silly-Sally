@@ -19,10 +19,11 @@ public:
 	Terrain(int);
 	~Terrain();
 
+	bool isLocatedAt(int, int);
 	void defineShape();
-
-	char spriteData();
+	char spriteData(int,int);
 	void setSprite();
+	
 	int getLineType();
 	int getHoleType();
 

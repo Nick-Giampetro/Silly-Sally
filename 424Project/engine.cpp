@@ -14,11 +14,9 @@ engine::engine() {
 	Wall temp2(frameSize,0);
 	bounds.push_back(temp1);
 	bounds.push_back(temp2);
-	temp1.~Wall();
-	temp2.~Wall();
 
-	Terrain temp1;
-	obstacles
+	Terrain temp;
+	obstacles.push_back(temp);
 
 
 	// need to figure out the terrain stuff still
@@ -28,6 +26,10 @@ engine::engine() {
 
 
 void engine::frameGen() {
+	for (int i = 0; i < frameSize; i++)
+		for (int j = 0; j < frameSize; j++) {
+
+		}
 
 }
 

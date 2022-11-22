@@ -8,6 +8,7 @@ public:
     ~Wall();
     Wall(int,int);
 
+    bool isLocatedAt(int, int);
     char spriteData(int, int);
     void setSprite();
     void defineShape();
