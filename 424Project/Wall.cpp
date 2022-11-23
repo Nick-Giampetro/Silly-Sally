@@ -2,7 +2,6 @@
 
 
 Wall::Wall() {
-	setPos(0, 99);
 	setVel(0, 0);
 }
 
@@ -20,9 +19,13 @@ bool Wall::isLocatedAt(int, int) {
 char Wall::spriteData(int ,int) {
 	return ' ';
 }
-void Wall::setSprite() {
 
+void Wall::setSprite()
+{
+	wallSprite = '*';
 }
-void Wall::defineShape() {
 
+void Wall::defineShape()
+{
+	//I feel like the wall just needs to be single char that we loop into the terrain generation
 }
