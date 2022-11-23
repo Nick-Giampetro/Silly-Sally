@@ -7,7 +7,6 @@ Sally::Sally()
 	this->setVel(1, 0);
 	this->setSprite();
 	
-
 }
 
 Sally::~Sally()
@@ -15,10 +14,32 @@ Sally::~Sally()
 	cout << "We lost Sally!" << endl;
 }
 
+bool Sally::isLocatedAt(int I, int J) {
+	
+	for (int i = 0; i < sallySizeI; i++)
+		for (int j = 0; j < sallySizeJ; j++) {
+			if (imgPos[i][j][0] == I && imgPos[i][j][1] == J)
+				return true;
+		}
+
+	return false;
+}
+
+void Sally::defineShape() {
+	for (int i = 0; i < sallySizeI; i++)
+		for (int j = 0; j < sallySizeJ; j++) {
+			imgPos[i][j][0] = this->getPosX() + i;
+			imgPos[i][j][1] = this->getPosY() + j;
+		}
+}
 
 
-char Sally::spriteData(int,int) {
-	return img[][];
+char Sally::spriteData(int I,int J) {
+	for (int i = 0; i < sallySizeI; i++)
+		for (int j = 0; j < sallySizeJ; j++) {
+			if (imgPos[i][j][0] == I && imgPos[i][j][1] == J)
+				return img[i][j];
+		}
 }
 
 void Sally::setSprite() {

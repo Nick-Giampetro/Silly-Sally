@@ -5,14 +5,19 @@ Wall::Wall() {
 	setVel(0, 0);
 }
 
+Wall::~Wall() {}
+
 Wall::Wall(int x, int y) {
 	this->setPos(x, y);
 }
 
-char Wall::spriteData()
-{
 
-	return wallSprite;
+bool Wall::isLocatedAt(int, int) {
+
+}
+
+char Wall::spriteData(int ,int) {
+	return ' ';
 }
 
 void Wall::setSprite()
