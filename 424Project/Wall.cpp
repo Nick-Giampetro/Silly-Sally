@@ -12,20 +12,41 @@ Wall::Wall(int x, int y) {
 }
 
 
-bool Wall::isLocatedAt(int, int) {
+bool Wall::isLocatedAt(int I, int J) {
+	for (int j = 0; j < framesize; j++)
+	{
+		if (imgPos[j][0] == I && imgPos[j][1] == J)
+			return true;
 
+	}
+	return false;
 }
 
-char Wall::spriteData(int ,int) {
-	return ' ';
+char Wall::spriteData(int I,int J) 
+{
+	for (int j = 0; j < framesize; j++)
+	{
+		if (imgPos[j][0] == I && imgPos[j][1] == J)
+			return wallSprite[j];
+
+	}
+
 }
 
 void Wall::setSprite()
 {
-	wallSprite = '*';
+	for (int i = 0; i < framesize; i++)
+	{
+		wallSprite[i] = '*';
+	}
+	
 }
 
 void Wall::defineShape()
 {
-	//I feel like the wall just needs to be single char that we loop into the terrain generation
+	for (int j = 0; j < framesize; j++) 
+	{
+		imgPos[j][0] = this->getPosX();
+		imgPos[j][1] = this->getPosY() + j;
+	}
 }
