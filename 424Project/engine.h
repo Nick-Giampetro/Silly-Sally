@@ -32,7 +32,7 @@ private:
 	Sally player;
 
 	// counter of the current frame in time
-	int frameStep ;
+	int frameStep, fps ;
 	
 	// the array that contains the total frame image
 	char frameImg[frameSize][frameSize];

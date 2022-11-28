@@ -6,6 +6,7 @@ engine::engine() {
 
 	// initializing variables
 	frameStep = 0;
+	fps = 10;
 	isAlive = true;
 	for (int i = 0; i < frameSize; i++)
 		for (int j = 0; j < frameSize; j++)
@@ -49,5 +50,17 @@ void engine::frameGen() {
 }
 
 void engine::frameStepper() {
+	
 	frameStep++;
+	double frameTime = static_cast<double>(frameStep) / fps;
+
+	double tStep = 1.0 / fps;
+
+
+	player.setPos(player.getPosX() + player.getVelX() * tStep, player.getPosY() + player.getVelY() * tStep);
+
+	for (int k = 0; k < obstacles.size(); k++)
+		obstacles[k].setPos(obstacles[k].getPosX() + obstacles[k].getVelX() * tStep, obstacles[k].getPosY() + obstacles[k].getVelY() * tStep);
+
+	
 }
