@@ -5,6 +5,7 @@ Terrain::Terrain() {
 	//itial hole spawn at hole number 3 (the middle of the screen) with line type 1
 	holeType = 3;
 	lineType = 1;
+	
 	//initalize array of 0 so IDE is happy
 	for (int j = 0; j < lineLength; j++)
 	{
@@ -34,9 +35,7 @@ Terrain::Terrain(int prevType) {
 
 }
 
-Terrain::~Terrain() {
-	;
-}
+Terrain::~Terrain() {}
 
 bool Terrain::isLocatedAt(int I, int J) {
 
@@ -61,7 +60,6 @@ char Terrain::spriteData(int I, int J) {
 
 	//defines the type of line that will print once the game is played for so long, starts at case 1
 	
-
 	for (int j = 0; j < lineLength; j++) {
 		if (imgPos[j][0] == I && imgPos[j][1] == J)
 			return img[j];
@@ -71,6 +69,7 @@ char Terrain::spriteData(int I, int J) {
 void Terrain::setSprite() {
 
 	int j = 0;
+
 	//frame size divided-by five (fsdf) and then multiplied by an integer
 	auto fsdf = [](int a) -> int { return (frameSize / 5) * a; };
 

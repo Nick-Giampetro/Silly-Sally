@@ -64,8 +64,8 @@ void engine::frameStepper() {
 	for (int k = 0; k < obstacles.size(); k++)
 		obstacles[k].setPos(obstacles[k].getPosX() + obstacles[k].getVelX() * tStep, obstacles[k].getPosY() + obstacles[k].getVelY() * tStep);
 	
-	if(obstacles[0].getPosY() > frameSize)
-
+	if (obstacles[0].getPosY() > frameSize)
+		obstacles.erase(obstacles.begin());
 
 
 	if ((frameStep % terrainTime*fps) == 0) {
@@ -109,7 +109,4 @@ void engine::playerInput() {
 			player.setPos(player.getPosX() + 1, player.getPosY());
         }
     }
-   
-    
-
 }

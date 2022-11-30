@@ -1,11 +1,7 @@
 #pragma once
 
-#include <iostream>
 #include "Entity.h"
-#include "array"
-#include "engine.h"
 #include <time.h>
-#include <stdlib.h>
 using namespace std;
 
 class Terrain : public Entity
