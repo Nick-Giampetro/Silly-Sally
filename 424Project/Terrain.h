@@ -1,39 +1,21 @@
 #pragma once
-
-#include <iostream>
 #include "Entity.h"
-#include "array"
-#include "engine.h"
-#include <time.h>
-#include <stdlib.h>
-using namespace std;
 
-class Terrain : public Entity
+class Terrain :
+    public Entity
 {
-
-	static const int frameSize = 100;
-	static const int lineLength = 5;
-
+    static const int framesize = 100;
 public:
+    Terrain();
+    ~Terrain();
+    Terrain(int, int);
 
-	Terrain();
-	Terrain(int);
-	~Terrain();
-
-	bool isLocatedAt(int, int);
-	void defineShape();
-	char spriteData(int, int);
-	void setSprite();
-	
-	int getLineType();
-	int getHoleType();
-
+    bool isLocatedAt(int, int);
+    char spriteData(int, int);
+    void setSprite();
+    void defineShape();
 private:
-	int lineType = 1;
-	int holeType;
-	char img[lineLength];
-	int imgPos[lineLength][2];
-
-
+    char wallSprite[framesize];
+    int imgPos[framesize][2];
 };
 

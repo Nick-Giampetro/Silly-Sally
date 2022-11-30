@@ -23,7 +23,7 @@ engine::engine() {
 	bounds.push_back(temp2);
 
 	// initiallizing first obstacle
-	Terrain temp;
+	Terrain temp(frameSize/2,0);
 	obstacles.push_back(temp);
 }
 
