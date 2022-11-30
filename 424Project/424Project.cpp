@@ -28,7 +28,9 @@ void run(engine &g) {
     int counter = 0;
 
     while (g.getLifeStatus() || counter > 100)
-    {
+    {       
+        system("cls");
+
         //make the frame
         g.frameGen();
 
@@ -40,8 +42,6 @@ void run(engine &g) {
        
         //make next frame
         g.frameStepper();
-
-        system("clc");
 
         counter++;
     }
