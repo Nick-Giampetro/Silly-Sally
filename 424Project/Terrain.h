@@ -2,6 +2,7 @@
 
 #include "Entity.h"
 #include <time.h>
+#include <stdlib.h>
 using namespace std;
 
 class Terrain : public Entity
