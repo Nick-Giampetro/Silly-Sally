@@ -8,7 +8,7 @@ using namespace std;
 class Terrain : public Entity
 {
 
-	static const int frameSize = 100;
+	static const int frameSize = 50;
 	static const int lineLength = 5;
 
 public:

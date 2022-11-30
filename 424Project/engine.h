@@ -13,7 +13,7 @@ class engine
 {
 
 	// size of the frame image
-	static const int frameSize = 100;
+	static const int frameSize = 50;
 
 public:
 	// where the player, and terrain objects are initiallized at the start of the game.

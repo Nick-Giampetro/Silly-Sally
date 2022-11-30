@@ -3,7 +3,7 @@
 class Wall :
     public Entity
 {
-    static const int framesize = 100;
+    static const int framesize = 50;
 public:
     Wall();
     ~Wall();

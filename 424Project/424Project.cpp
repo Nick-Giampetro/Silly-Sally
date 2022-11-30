@@ -27,7 +27,7 @@ void run(engine &g) {
 
     int counter = 0;
 
-    while (g.getLifeStatus() || counter > 100)
+    while (g.getLifeStatus() || counter < 1000)
     {       
         system("cls");
 
@@ -45,6 +45,8 @@ void run(engine &g) {
 
         counter++;
     }
+
+    cout << counter << endl ;
     
 }
 

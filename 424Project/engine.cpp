@@ -14,7 +14,7 @@ engine::engine() {
 			frameImg[i][j] = ' ';
 
 	// initiallizing player
-	player.setPos(frameSize / 2, frameSize - frameSize / 20);
+	player.setPos(frameSize - frameSize / 5, frameSize / 2);
 
 	// initializing walls
 	Wall temp1(0,0);
@@ -38,7 +38,7 @@ void engine::frameGen() {
 			frameImg[i][j] = bounds[1].getSprite(i, j);
 			// filling in the terrain
 			for (int k = 0; k < obstacles.size(); k++)
-				frameImg[i][j] = obstacles[k].getSprite(i, j);
+				frameImg[i][j] = (obstacles[k]).getSprite(i, j);
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
 			if (frameImg[i][j] == ' ')
 				frameImg[i][j] = player.getSprite(i, j);
@@ -62,9 +62,9 @@ void engine::frameStepper() {
 	player.setPos(player.getPosX() + player.getVelX() * tStep, player.getPosY() + player.getVelY() * tStep);
 
 	for (int k = 0; k < obstacles.size(); k++)
-		obstacles[k].setPos(obstacles[k].getPosX() + obstacles[k].getVelX() * tStep, obstacles[k].getPosY() + obstacles[k].getVelY() * tStep);
+		(obstacles[k]).setPos((obstacles[k]).getPosX() + (obstacles[k]).getVelX() * tStep, (obstacles[k]).getPosY() + (obstacles[k]).getVelY() * tStep);
 	
-	if (obstacles[0].getPosY() > frameSize)
+	if ((obstacles[0]).getPosY() > frameSize)
 		obstacles.erase(obstacles.begin());
 
 
@@ -79,11 +79,9 @@ void engine::frameStepper() {
 void engine::frameOutput() {
 
 	for (int i = 0; i < frameSize; i++) {
-		for (int j = 0; j < frameSize; j++)
-		{
+		for (int j = 0; j < frameSize; j++) {
 			cout << frameImg[i][j];
 		}
-
 		cout << endl;
 	}
 }
