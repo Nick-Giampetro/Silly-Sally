@@ -17,15 +17,15 @@ Terrain::Terrain() {
 	setPos(frameSize / 2, 0);
 }
 
-Terrain::Terrain(int prevHole) {
+Terrain::Terrain(int prevType) {
 
 	//random number generator to randomly choose a new hole one position to the left or right or directly about the previous hole
 	srand(time(0));
-	holeType = prevHole + (rand() % 3 - 1);
+	holeType = prevType + (rand() % 3 - 1);
 
 	//assures that the new hole is a valid hole number (1-5)
 	while (holeType < 1 || holeType > 5) {
-		holeType = prevHole + (rand() % 3 - 1);
+		holeType = prevType + (rand() % 3 - 1);
 	}
 	for (int j = 0; j < lineLength; j++)
 	{
@@ -74,7 +74,7 @@ void Terrain::setSprite() {
 
 	int j = 0;
 	//frame size divided-by five (fsdf) and then multiplied by an integer
-	auto fsdf = [](int a) -> int { return (frameSize / 5) * a; };
+	//auto fsdf = [](int a) -> int { return (frameSize / 5) * a; };
 
 	char temp;
 
@@ -92,20 +92,7 @@ void Terrain::setSprite() {
 		break;
 	}
 
-	//sets the line within the frame size
-	for (int i = 0; i < frameSize; i++) {
-
-		//sets the hole
-		for (; j < (fsdf(1)) && i >= fsdf(getHoleType() - 1); j++, i++) {
-			img[i] = ' ';
-			i++;
-		}
-		//accounts for the extra character that would appear after the hole if at hole number 5
-		if (getHoleType() != 5 || i < fsdf(4)) {
-			img[i] = temp;
-		}
-
-	}
+	
 }
 
 int Terrain::getLineType() {

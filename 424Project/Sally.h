@@ -26,6 +26,5 @@ private:
 	char img[sallySizeI][sallySizeJ];
 	int imgPos[sallySizeI][sallySizeJ][2];
 
-	
 };
 
