@@ -37,8 +37,8 @@ public:
 
 private:
 	// object containers for the walls, terrain and sally
-	vector<Terrain> obstacles;
 	vector<Wall> bounds;
+	vector<Terrain> obstacles;
 	Sally player;
 
 	// counter of the current frame in time

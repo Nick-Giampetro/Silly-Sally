@@ -1,5 +1,4 @@
 #include "Terrain.h"
-#include "engine.h"
 
 Terrain::Terrain() {
 
@@ -14,7 +13,6 @@ Terrain::Terrain() {
 		img[j] = 0;
 	}
 
-	setPos(frameSize / 2, 0);
 }
 
 Terrain::Terrain(int prevType) {
@@ -74,7 +72,7 @@ void Terrain::setSprite() {
 
 	int j = 0;
 	//frame size divided-by five (fsdf) and then multiplied by an integer
-	//auto fsdf = [](int a) -> int { return (frameSize / 5) * a; };
+	auto fsdf = [](int a) -> int { return (frameSize / 5) * a; };
 
 	char temp;
 
@@ -92,7 +90,20 @@ void Terrain::setSprite() {
 		break;
 	}
 
-	
+	//sets the line within the frame size
+	for (int i = 0; i < frameSize; i++) {
+
+		//sets the hole
+		for (; j < (fsdf(1)) && i >= fsdf(getHoleType() - 1); j++, i++) {
+			img[i] = ' ';
+			i++;
+		}
+		//accounts for the extra character that would appear after the hole if at hole number 5
+		if (getHoleType() != 5 || i < fsdf(4)) {
+			img[i] = temp;
+		}
+
+	}
 }
 
 int Terrain::getLineType() {

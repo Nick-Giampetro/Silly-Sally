@@ -54,6 +54,7 @@ void engine::frameStepper() {
 	
 	frameStep++;
 	double frameTime = static_cast<double>(frameStep) / fps;
+	int terrainTime = 2;
 
 	double tStep = 1.0 / fps;
 
@@ -62,8 +63,17 @@ void engine::frameStepper() {
 
 	for (int k = 0; k < obstacles.size(); k++)
 		obstacles[k].setPos(obstacles[k].getPosX() + obstacles[k].getVelX() * tStep, obstacles[k].getPosY() + obstacles[k].getVelY() * tStep);
-
 	
+	if(obstacles[0].getPosY() > frameSize)
+
+
+
+	if ((frameStep % terrainTime*fps) == 0) {
+		Terrain temp(obstacles[obstacles.size()].getHoleType());
+		obstacles.push_back(temp);
+	}
+
+
 }
 
 void engine::frameOutput() {
