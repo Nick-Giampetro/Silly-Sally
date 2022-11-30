@@ -7,10 +7,45 @@
 
 static const int frameSize = 100;
 
+using namespace std;
+
+void run(engine&);
+
 int main()
 {
-    Sally Player1;
+    
+    engine game;
+
+    run(game);
+   
+
     
 
+}
+
+void run(engine &g) {
+
+
+    int counter = 0;
+
+    while (g.getLifeStatus() || counter > 100)
+    {
+        //make the frame
+        g.frameGen();
+
+        //output the frame
+        g.frameOutput();
+       
+        //takes playerinput
+        g.playerInput();
+       
+        //make next frame
+        g.frameStepper();
+
+        system("clc");
+
+        counter++;
+    }
+    
 }
 

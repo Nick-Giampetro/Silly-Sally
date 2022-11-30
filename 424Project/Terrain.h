@@ -12,6 +12,7 @@ class Terrain : public Entity
 {
 
 	static const int frameSize = 100;
+	static const int lineLength = 5;
 
 public:
 
@@ -21,7 +22,7 @@ public:
 
 	bool isLocatedAt(int, int);
 	void defineShape();
-	char spriteData(int,int);
+	char spriteData(int, int);
 	void setSprite();
 	
 	int getLineType();
@@ -30,7 +31,8 @@ public:
 private:
 	int lineType = 1;
 	int holeType;
-	char img[frameSize];
+	char img[lineLength];
+	int imgPos[lineLength][2];
 
 
 };

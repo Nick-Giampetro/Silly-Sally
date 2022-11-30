@@ -1,4 +1,5 @@
 #include "engine.h"
+#include <Windows.h>
 
 
 //sets starting entities
@@ -63,4 +64,42 @@ void engine::frameStepper() {
 		obstacles[k].setPos(obstacles[k].getPosX() + obstacles[k].getVelX() * tStep, obstacles[k].getPosY() + obstacles[k].getVelY() * tStep);
 
 	
+}
+
+void engine::frameOutput() {
+
+	for (int i = 0; i < frameSize; i++) {
+		for (int j = 0; j < frameSize; j++)
+		{
+			cout << frameImg[i][j];
+		}
+
+		cout << endl;
+	}
+}
+
+bool engine::getLifeStatus() {
+	return isAlive;
+}
+
+void engine::playerInput() {
+
+    if (GetAsyncKeyState(VK_LEFT))
+    {
+		if (player.getPosX() != 0 && player.getPosX() != frameSize)
+        {
+			player.setPos(player.getPosX() - 1, player.getPosY());
+        }
+    }
+    else if (GetAsyncKeyState(VK_RIGHT))
+    {
+		if (player.getPosX() != 0 && player.getPosX() != frameSize)
+        {
+            
+			player.setPos(player.getPosX() + 1, player.getPosY());
+        }
+    }
+   
+    
+
 }

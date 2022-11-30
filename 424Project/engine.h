@@ -5,6 +5,7 @@
 #include "Terrain.h"
 #include "Sally.h"
 #include "Wall.h"
+#include <Windows.h>
 
 using namespace std;
 
@@ -23,6 +24,15 @@ public:
 
 	// used to update the objects to the next frame
 	void frameStepper();
+
+	// used to output frames
+	void frameOutput();
+	
+	//for returning alive status
+	bool getLifeStatus();
+
+	//for recording player key inputs
+	void playerInput();
 
 
 private:
