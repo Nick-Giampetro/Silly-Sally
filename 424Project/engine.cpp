@@ -23,8 +23,6 @@ engine::engine() {
 	bounds.push_back(temp1);
 	bounds.push_back(temp2);
 
-	// test code
-	tBound.setPos(1, 0);
 
 	// initiallizing first obstacle
 	Terrain temp;
@@ -40,10 +38,9 @@ void engine::frameGen() {
 			// filling in the walls on the outside
 			frameImg[i][j] = bounds[0].getSprite(i, j, frameImg[i][j]);
 			frameImg[i][j] = bounds[1].getSprite(i, j, frameImg[i][j]);
-			//frameImg[i][j] = tBound.getSprite(i, j, frameImg[i][j]);
 			// filling in the terrain
-			//for (int k = 0; k < obstacles.size() - 1; k++)
-				//frameImg[i][j] = obstacles[k].getSprite(i, j);
+			for (int k = 0; k < obstacles.size() ; k++)
+				frameImg[i][j] = obstacles[k].getSprite(i, j, frameImg[i][j]);
 			
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
 			//if (frameImg[i][j] == ' ')
