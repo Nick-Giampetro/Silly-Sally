@@ -10,16 +10,17 @@ using namespace std;
 
 void run(engine&);
 
+void test(engine& g);
+
 int main()
 {
     
     engine game;
 
-    run(game);
+    test(game);
+
+    //run(game);
    
-
-    
-
 }
 
 void run(engine &g) {
@@ -50,3 +51,15 @@ void run(engine &g) {
     
 }
 
+void test(engine& g) {
+
+    //make the frame
+    g.frameGen();
+
+    //output the frame
+    g.frameOutput();
+
+
+    system("pause");
+
+}

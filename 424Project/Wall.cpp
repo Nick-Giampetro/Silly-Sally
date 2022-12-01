@@ -5,27 +5,20 @@ Wall::Wall() {
 	setVel(0, 0);
 	
 	//initalize array of 0 so IDE is happy
-	for (int j = 0; j < framesize; j++)
-	{
-		imgPos[j][0] = 0;
-		imgPos[j][1] = 0;
-		wallSprite[j] = 0;
-	}
-	
+	this->setSprite();
+	this->defineShape();
 }
 
 Wall::~Wall() {}
 
 Wall::Wall(int x, int y) {
+	
 	this->setPos(x, y);
 
 	//still making IDE happy
-	for (int j = 0; j < framesize; j++)
-	{
-		imgPos[j][0] = 0;
-		imgPos[j][1] = 0;
-		wallSprite[j] = 0;
-	}
+	this->setSprite();
+	this->defineShape();
+
 }
 
 

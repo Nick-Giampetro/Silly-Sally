@@ -37,7 +37,7 @@ void engine::frameGen() {
 			frameImg[i][j] = bounds[0].getSprite(i, j);
 			frameImg[i][j] = bounds[1].getSprite(i, j);
 			// filling in the terrain
-			for (int k = 0; k < obstacles.size(); k++)
+			for (int k = 0; k < obstacles.size() ; k++)
 				frameImg[i][j] = (obstacles[k]).getSprite(i, j);
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
 			if (frameImg[i][j] == ' ')

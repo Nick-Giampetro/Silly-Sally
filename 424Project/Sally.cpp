@@ -6,6 +6,7 @@ Sally::Sally()
 
 	this->setVel(1, 0);
 	this->setSprite();
+	this->defineShape();
 	
 }
 

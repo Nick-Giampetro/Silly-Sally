@@ -26,10 +26,10 @@ public:
 	int getHoleType();
 
 private:
-	int lineType = 1;
+	int lineType;
 	int holeType;
-	char img[lineLength];
-	int imgPos[lineLength][2];
+	char img[frameSize];
+	int imgPos[frameSize][2];
 
 
 };

@@ -5,34 +5,32 @@ Terrain::Terrain() {
 	//itial hole spawn at hole number 3 (the middle of the screen) with line type 1
 	holeType = 3;
 	lineType = 1;
-	
+	this->setPos(0, 0);
+
 	//initalize array of 0 so IDE is happy
-	for (int j = 0; j < lineLength; j++)
-	{
-		imgPos[j][0] = 0;
-		imgPos[j][1] = 0;
-		img[j] = 0;
-	}
+	this->setSprite();
+	this->defineShape();
 
 }
 
 Terrain::Terrain(int prevType) {
 
+
+	lineType = 1;
+	this->setPos(0, 0);
+
 	//random number generator to randomly choose a new hole one position to the left or right or directly about the previous hole
 	srand(time(0));
 	holeType = prevType + (rand() % 3 - 1);
+	
 
 	//assures that the new hole is a valid hole number (1-5)
 	while (holeType < 1 || holeType > 5) {
 		holeType = prevType + (rand() % 3 - 1);
 	}
-	for (int j = 0; j < lineLength; j++)
-	{
-		imgPos[j][0] = 0;
-		imgPos[j][1] = 0;
-		img[j] = 0;
-	}
-
+	
+	this->setSprite();
+	this->defineShape();
 }
 
 Terrain::~Terrain() {}
@@ -40,7 +38,7 @@ Terrain::~Terrain() {}
 bool Terrain::isLocatedAt(int I, int J) {
 
 	
-		for (int j = 0; j < lineLength; j++) {
+		for (int j = 0; j < frameSize; j++) {
 			if (imgPos[j][0] == I && imgPos[j][1] == J)
 				return true;
 		}
@@ -50,7 +48,7 @@ bool Terrain::isLocatedAt(int I, int J) {
 
 void Terrain::defineShape() {
 
-		for (int j = 0; j < lineLength; j++) {
+		for (int j = 0; j < frameSize; j++) {
 			imgPos[j][0] = this->getPosX() + j;
 			imgPos[j][1] = this->getPosY();
 		}
