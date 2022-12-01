@@ -65,18 +65,17 @@ void engine::frameStepper() {
 	double tStep = 1.0 / fps;
 
 
-	player.setPos(player.getPosX() + player.getVelX() * tStep, player.getPosY() + player.getVelY() * tStep);
+	player.setPos(player.getPosX() + player.getVelX() , player.getPosY() + player.getVelY() );
 
 	for (int k = 0; k < obstacles.size(); k++)
-		(obstacles[k]).setPos((obstacles[k]).getPosX() + (obstacles[k]).getVelX() * tStep, (obstacles[k]).getPosY() + (obstacles[k]).getVelY() * tStep);
+		(obstacles[k]).setPos((obstacles[k]).getPosX() + obstacles[k].getVelX() , (obstacles[k]).getPosY() + obstacles[k].getVelY());
 	
 	if ((obstacles[0]).getPosY() > frameSize)
 		obstacles.erase(obstacles.begin());
 
-	int test = frameStep % (terrainTime * fps);
 
-	if (test == 0) {
-		Terrain temp(obstacles[obstacles.size()].getHoleType());
+	if (frameStep % (terrainTime * fps) == 0) {
+		Terrain temp(obstacles[obstacles.size()-1].getHoleType());
 		obstacles.push_back(temp);
 	}
 
