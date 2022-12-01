@@ -98,19 +98,8 @@ bool engine::getLifeStatus() {
 
 void engine::playerInput() {
 
-    if (GetAsyncKeyState(VK_LEFT))
+    if (GetAsyncKeyState(VK_LSHIFT))
     {
-		if (player.getPosX() != 0 && player.getPosX() != frameSize)
-        {
-			player.setPos(player.getPosX() - 1, player.getPosY());
-        }
-    }
-    else if (GetAsyncKeyState(VK_RIGHT))
-    {
-		if (player.getPosX() != 0 && player.getPosX() != frameSize)
-        {
-            
-			player.setPos(player.getPosX() + 1, player.getPosY());
-        }
+		player.setVel(player.getVelX() * -1, player.getVelY() * -1);
     }
 }

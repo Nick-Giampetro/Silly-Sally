@@ -48,6 +48,8 @@ void run(engine &g) {
     }
 
     cout << counter << endl ;
+
+    system("pause");
     
 }
 
