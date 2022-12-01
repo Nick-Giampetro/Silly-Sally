@@ -17,9 +17,9 @@ int main()
     
     engine game;
 
-    test(game);
+    //test(game);
 
-    //run(game);
+    run(game);
    
 }
 
@@ -28,7 +28,7 @@ void run(engine &g) {
 
     int counter = 0;
 
-    while (g.getLifeStatus() || counter < 1000)
+    while (g.getLifeStatus())
     {       
         system("cls");
 

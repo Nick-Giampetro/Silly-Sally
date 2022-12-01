@@ -48,7 +48,7 @@ void engine::frameGen() {
 				frameImg[i][j] = obstacles[k].getSprite(i, j, frameImg[i][j]);
 			
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
-			if (frameImg[i][j] != ' ')
+			if (frameImg[i][j] != ' ' && player.isLocatedAt(i,j))
 				isAlive = false;
 			else
 				frameImg[i][j] = player.getSprite(i, j, frameImg[i][j]);
