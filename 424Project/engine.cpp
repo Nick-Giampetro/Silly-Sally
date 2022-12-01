@@ -15,7 +15,7 @@ engine::engine() {
 			frameImg[i][j] = ' ';
 
 	// initiallizing player
-	player.setPos(frameSize - frameSize / 5, frameSize / 2);
+	player.setPos(frameSize / 2, frameSize - frameSize / 5);
 
 	// initializing walls
 	Wall temp1(0,0);
@@ -43,12 +43,10 @@ void engine::frameGen() {
 				frameImg[i][j] = obstacles[k].getSprite(i, j, frameImg[i][j]);
 			
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
-			//if (frameImg[i][j] == ' ')
+			if (frameImg[i][j] != ' ')
+				isAlive = false;
+			else
 				frameImg[i][j] = player.getSprite(i, j, frameImg[i][j]);
-			//else {
-			//	isAlive = false;
-			//	return;
-			//}
 		}
 
 }

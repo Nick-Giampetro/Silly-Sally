@@ -59,9 +59,9 @@ void Wall::setSprite()
 void Wall::defineShape()
 {
 	//creates the wall sprite in the frame so that location data can be extracted for master frame
-	for (int j = 0; j < framesize; j++) 
-	{
-		imgPos[j][0] = this->getPosX();
-		imgPos[j][1] = this->getPosY() + j;
+	for (int j = 0; j < framesize; j++) {
+		imgPos[j][0] = this->getPosX() + j;
+		imgPos[j][1] = this->getPosY();
 	}
+	
 }

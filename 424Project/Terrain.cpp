@@ -48,10 +48,11 @@ bool Terrain::isLocatedAt(int I, int J) {
 
 void Terrain::defineShape() {
 
-		for (int j = 0; j < frameSize; j++) {
-			imgPos[j][0] = this->getPosX() + j;
-			imgPos[j][1] = this->getPosY();
-		}
+	for (int j = 0; j < frameSize; j++)
+	{
+		imgPos[j][0] = this->getPosX();
+		imgPos[j][1] = this->getPosY() + j;
+	}
 }
 
 char Terrain::spriteData(int I, int J) {
