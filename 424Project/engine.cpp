@@ -9,6 +9,7 @@ engine::engine() {
 	frameStep = 0;
 	fps = 10;
 	isAlive = true;
+	
 	for (int i = 0; i < frameSize; i++)
 		for (int j = 0; j < frameSize; j++)
 			frameImg[i][j] = ' ';
@@ -17,13 +18,13 @@ engine::engine() {
 	player.setPos(frameSize - frameSize / 5, frameSize / 2);
 
 	// initializing walls
-	Wall temp1;
-	Wall temp2;
+	Wall temp1(0,0);
+	Wall temp2(frameSize-1, 0);
 	bounds.push_back(temp1);
 	bounds.push_back(temp2);
-	bounds[0].setPos(0, 0);
-	bounds[1].setPos(frameSize, 0);
 
+	// test code
+	tBound.setPos(1, 0);
 
 	// initiallizing first obstacle
 	Terrain temp;
@@ -37,18 +38,20 @@ void engine::frameGen() {
 	for (int i = 0; i < frameSize; i++)
 		for (int j = 0; j < frameSize; j++) {
 			// filling in the walls on the outside
-			frameImg[i][j] = bounds[0].getSprite(i, j);
-			frameImg[i][j] = bounds[1].getSprite(i, j);
+			frameImg[i][j] = bounds[0].getSprite(i, j, frameImg[i][j]);
+			frameImg[i][j] = bounds[1].getSprite(i, j, frameImg[i][j]);
+			//frameImg[i][j] = tBound.getSprite(i, j, frameImg[i][j]);
 			// filling in the terrain
-			for (int k = 0; k < obstacles.size()-1 ; k++)
-				frameImg[i][j] = obstacles[k].getSprite(i, j);
+			//for (int k = 0; k < obstacles.size() - 1; k++)
+				//frameImg[i][j] = obstacles[k].getSprite(i, j);
+			
 			// filling in the player, if the space is not a space, function ends and isAlive turns false
-			if (frameImg[i][j] == ' ')
-				frameImg[i][j] = player.getSprite(i, j);
-			else {
-				isAlive = false;
-				return;
-			}
+			//if (frameImg[i][j] == ' ')
+				frameImg[i][j] = player.getSprite(i, j, frameImg[i][j]);
+			//else {
+			//	isAlive = false;
+			//	return;
+			//}
 		}
 
 }

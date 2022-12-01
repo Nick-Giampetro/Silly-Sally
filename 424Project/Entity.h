@@ -15,7 +15,7 @@ public:
 	int getVelY();
 
 	// function that engine will call to see if there is a sprite at that location and return it
-	char getSprite(int,int);
+	char getSprite(int,int,char);
 
 
 

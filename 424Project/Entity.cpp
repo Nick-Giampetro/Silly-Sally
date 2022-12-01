@@ -34,8 +34,9 @@ int Entity::getVelY() {
 	return vY;
 }
 
-char Entity::getSprite(int I, int J) {
+char Entity::getSprite(int I, int J, char cImg) {
 	if (this->isLocatedAt(I, J))
 		return this->spriteData(I, J);
-	return ' ';
+	
+	return cImg;
 }
