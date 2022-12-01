@@ -4,7 +4,7 @@ Sally::Sally()
 {
 	cout << "Sally Lives!" << endl;
 
-	this->setVel(1, 0);
+	this->setVel(0, 1);
 	this->setSprite();
 	this->defineShape();
 	

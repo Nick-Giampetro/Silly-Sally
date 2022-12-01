@@ -41,8 +41,6 @@ private:
 	vector<Terrain> obstacles;
 	Sally player;
 
-	Wall tBound;
-
 	// counter of the current frame in time
 	int frameStep, fps ;
 	

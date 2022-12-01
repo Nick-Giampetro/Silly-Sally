@@ -15,11 +15,11 @@ engine::engine() {
 			frameImg[i][j] = ' ';
 
 	// initiallizing player
-	player.setPos(frameSize / 2, frameSize - frameSize / 5);
+	player.setPos(frameSize - frameSize / 5, frameSize / 2);
 
 	// initializing walls
 	Wall temp1(0,0);
-	Wall temp2(frameSize-1, 0);
+	Wall temp2(0 , frameSize - 1);
 	bounds.push_back(temp1);
 	bounds.push_back(temp2);
 
@@ -31,6 +31,11 @@ engine::engine() {
 
 
 void engine::frameGen() {
+
+	// clears array for next frame
+	for (int i = 0; i < frameSize; i++)
+		for (int j = 0; j < frameSize; j++)
+			frameImg[i][j] = ' ';
 
 	// loop which fills in the frame with relevant frame info
 	for (int i = 0; i < frameSize; i++)
@@ -68,8 +73,9 @@ void engine::frameStepper() {
 	if ((obstacles[0]).getPosY() > frameSize)
 		obstacles.erase(obstacles.begin());
 
+	int test = frameStep % (terrainTime * fps);
 
-	if ((frameStep % terrainTime*fps) == 0) {
+	if (test == 0) {
 		Terrain temp(obstacles[obstacles.size()].getHoleType());
 		obstacles.push_back(temp);
 	}

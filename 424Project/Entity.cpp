@@ -10,8 +10,8 @@ Entity::Entity() {
 
 // postition functions
 void Entity::setPos(int I, int J) {
-	pX = J;
-	pY = I;
+	pX = I;
+	pY = J;
 
 	this->defineShape();
 }

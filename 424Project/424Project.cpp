@@ -53,12 +53,27 @@ void run(engine &g) {
 
 void test(engine& g) {
 
-    //make the frame
-    g.frameGen();
+    int count = 0;
 
-    //output the frame
-    g.frameOutput();
+    for (int i = 0; i < 20; i++) {
 
+        cout << ++count << endl ;
+
+        //make the frame
+        g.frameGen();
+
+        //output the frame
+        g.frameOutput();
+
+        //takes playerinput
+        // g.playerInput();
+
+        //make next frame
+        g.frameStepper();
+
+        cout << endl; 
+
+    }
 
     system("pause");
 

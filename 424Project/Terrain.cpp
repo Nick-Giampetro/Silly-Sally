@@ -6,6 +6,7 @@ Terrain::Terrain() {
 	holeType = 3;
 	lineType = 1;
 	this->setPos(0, 0);
+	this->setVel(1, 0);
 
 	//initalize array of 0 so IDE is happy
 	this->setSprite();
@@ -18,6 +19,7 @@ Terrain::Terrain(int prevType) {
 
 	lineType = 1;
 	this->setPos(0, 0);
+	this->setVel(1, 0);
 
 	//random number generator to randomly choose a new hole one position to the left or right or directly about the previous hole
 	srand(time(0));
@@ -50,8 +52,8 @@ void Terrain::defineShape() {
 
 	for (int j = 0; j < frameSize; j++)
 	{
-		imgPos[j][0] = this->getPosX();
-		imgPos[j][1] = this->getPosY() + j;
+		imgPos[j][0] = this->getPosX() ;
+		imgPos[j][1] = this->getPosY() + j ;
 	}
 }
 
