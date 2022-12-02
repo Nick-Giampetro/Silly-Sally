@@ -112,7 +112,9 @@ void engine::frameStepper() {
 
 void engine::frameOutput() {
 
+	// generates the current inital frame
 	this->frameGen();
+
 
 	for (int i = 0; i < frameSize; i++) {
 		for (int j = 0; j < frameSize; j++) {

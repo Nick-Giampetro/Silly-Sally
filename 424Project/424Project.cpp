@@ -13,7 +13,4 @@ int main()
     Menu menu;
 
     menu.startup();
-    
-   
 }
-
