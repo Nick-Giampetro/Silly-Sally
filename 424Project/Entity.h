@@ -1,5 +1,8 @@
 #pragma once
-class Entity
+
+#include "frameDefinition.h"
+
+class Entity : public frameDefinition
 {
 public:
 	Entity();
