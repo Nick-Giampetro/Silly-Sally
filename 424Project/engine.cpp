@@ -157,3 +157,7 @@ void engine::playerInput() {
 		player.setVel(player.getVelX() * -1, player.getVelY() * -1);
     }
 }
+
+int engine::getFps() {
+	return fps;
+}

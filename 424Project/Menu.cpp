@@ -156,7 +156,7 @@ void Menu::run()
 		//step objects
 		game.frameStepper();
 
-		Sleep(100);
+		Sleep(1000/game.getFps());
 
 		//u[dates frame image
 		game.frameUpdate();

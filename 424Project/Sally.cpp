@@ -1,5 +1,6 @@
 #include "Sally.h"
 
+// constructor
 Sally::Sally()
 {
 	cout << "Sally Lives!" << endl;
@@ -10,11 +11,12 @@ Sally::Sally()
 	
 }
 
-
+// deconstructor
 Sally::~Sally()
 {
 	cout << "We lost Sally!" << endl;
 }
+
 
 bool Sally::isLocatedAt(int I, int J) {
 	
