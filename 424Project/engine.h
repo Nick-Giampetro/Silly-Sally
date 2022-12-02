@@ -18,7 +18,7 @@ public:
 	engine();
 
 
-	//
+	//constructor ovreide for changing settings
 	engine(int, char);
 	
 
