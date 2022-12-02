@@ -6,6 +6,7 @@ Menu::Menu()
 	quit = false;
 	speedSetting = 1;
 	wallSprite = '*';
+	winScore = 36191;
 }
 
 Menu::~Menu()
@@ -15,6 +16,11 @@ Menu::~Menu()
 void Menu::startup()
 {
 	system("color 3f");
+
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD pos = { frameSize / 4,frameSize / 4 };
+	SetConsoleCursorPosition(hConsole, pos);
+	
 
 	cout << "Wellcome to Silly Sally!" << endl;
 	Sleep(2000);
@@ -27,7 +33,7 @@ void Menu::mainMenu()
 	while(!quit)
 	{
 		do {
-
+			cout << "(maximise window for best game experience.)" << endl;
 			cout << "Silly Sally game menu:" << endl;
 			cout << "1. Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
 
@@ -105,7 +111,7 @@ void Menu::run()
 {
 	engine game(speedSetting,wallSprite);
 
-	int counter = 0;
+	int score = 0;
 	//system("pause");
 
 	
@@ -113,7 +119,7 @@ void Menu::run()
 	//output the frame
 	game.frameOutput();
 
-	while (game.getLifeStatus())
+	while (game.getLifeStatus() && score < winScore)
 	{
 		//system("cls");
 
@@ -127,13 +133,32 @@ void Menu::run()
 		//u[dates frame image
 		game.frameUpdate();
 
-		counter++;
+		score++;
 	}
+	
 	//end game screen
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD pos = {frameSize/3,frameSize/2};
+	COORD pos = { frameSize / 3,frameSize / 2 };
 	SetConsoleCursorPosition(hConsole, pos);
-	cout << "Your score was: " << counter << endl;
+	
+	cout << "Your score was: " << score << endl;
 
+	pos = { frameSize / 4,frameSize / 2 + 1 };
+	SetConsoleCursorPosition(hConsole, pos);
+
+	if (score == winScore)
+	{
+		pos = { frameSize / 5,frameSize / 2 - 1 };
+		SetConsoleCursorPosition(hConsole, pos);
+		cout << "Congrats, you reached Sally's actual flight altitude in feet." << endl;
+	}
+	
+
+	
+		
+	
+	pos = { frameSize / 4,frameSize / 2 + 1 };
+	SetConsoleCursorPosition(hConsole, pos);
+	Sleep(2000);
 	system("pause");
 }

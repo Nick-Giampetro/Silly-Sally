@@ -20,7 +20,7 @@ private:
 	bool quit;
 	int speedSetting;
 	char wallSprite;
-
+	int winScore;
 	
 
 
