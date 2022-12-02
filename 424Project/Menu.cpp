@@ -87,3 +87,7 @@ void Menu::graphicsMenu(engine &g)
 
 	}
 }
+
+void Menu::run(engine&)
+{
+}
