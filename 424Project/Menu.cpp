@@ -74,7 +74,7 @@ void Menu::gameOptions()
 	{
 	case 1:
 		system("cls");
-		cout << "1. Normal" << endl;
+		cout << "1. Easy" << endl << "2. Medium" << endl << "3. Hard" << endl << "4. Silly" << endl << "Or enter at your own risk..." << endl;
 		cin >> speedSetting;
 		this->gameOptions();
 		break;
