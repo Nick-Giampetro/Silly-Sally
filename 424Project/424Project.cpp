@@ -2,11 +2,8 @@
 // 
 
 #include"Menu.h"
-#include <iostream>
 
-static const int frameSize = 100;
 
-using namespace std;
 
 int main()
 {
