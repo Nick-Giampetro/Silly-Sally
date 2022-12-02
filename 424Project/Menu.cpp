@@ -4,6 +4,8 @@ Menu::Menu()
 {
 	choice = 0;
 	quit = false;
+	speedSetting = 1;
+	wallSprite = '*';
 }
 
 Menu::~Menu()
@@ -12,6 +14,8 @@ Menu::~Menu()
 
 void Menu::startup()
 {
+	system("color 3f");
+
 	cout << "Wellcome to Silly Sally!" << endl;
 	Sleep(2000);
 	system("cls");
@@ -45,12 +49,12 @@ void Menu::mainMenu()
 		case 2:
 			gameOptions();
 			system("cls");
-			choice = 0;
+			
 			break;
 		case 3:
 			graphicsMenu();
 			system("cls");
-			choice = 0;
+			
 		case 4://just finish the program
 			quit = true;
 			break;
@@ -63,13 +67,17 @@ void Menu::mainMenu()
 void Menu::gameOptions()
 {
 	system("cls");
-	cout << "Game Options:" << endl << "1. Difficulty" << endl;
+	cout << "Game Options:" << endl << "1. Difficulty" << endl << "2. Back" << endl;
 	cin >> choice;
 	switch (choice)
 	{
 	case 1:
+		cin >> speedSetting;
+		this->gameOptions();
 		break;
-
+	case 2:
+		this->mainMenu();
+		break;
 
 
 
@@ -85,11 +93,39 @@ void Menu::graphicsMenu()
 	cin >> choice;
 	switch (choice) 
 	{
-
+	case 1:
+		system("cls");
 	}
 }
 
 void Menu::run()
 {
+	engine game(speedSetting,wallSprite);
 
+	int counter = 0;
+	//system("pause");
+
+	
+
+	//output the frame
+	game.frameOutput();
+
+	while (game.getLifeStatus())
+	{
+		//system("cls");
+
+		game.playerInput();
+
+		//step objects
+		game.frameStepper();
+
+		Sleep(100);
+
+		//u[dates frame image
+		game.frameUpdate();
+
+		counter++;
+	}
+
+	cout << counter << endl;
 }
