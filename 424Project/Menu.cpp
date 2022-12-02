@@ -98,7 +98,7 @@ void Menu::gameOptions()
 void Menu::graphicsMenu()
 {
 	system("cls");
-	cout << "Graphics Options:" << endl << "1. color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl<<"4. Back";
+	cout << "Graphics Options:" << endl << "1. color" << endl << "2. wall sprite" << endl << "3. obsticle sprite" << endl << "4. Back";
 	cin >> choice;
 	switch (choice) 
 	{
