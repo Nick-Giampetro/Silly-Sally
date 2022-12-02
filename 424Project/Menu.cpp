@@ -98,11 +98,37 @@ void Menu::gameOptions()
 void Menu::graphicsMenu()
 {
 	system("cls");
-	cout << "Graphics Options:" << endl << "1. color" << endl << "2. wall sprite" << endl << "3. obsticle sprite" << endl << "4. Back";
+
+	cout << "Graphics Options:" << endl << "1. color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl<<"4. Back";
+
 	cin >> choice;
 	switch (choice) 
 	{
 	case 1:
+		int scheme;
+		cout << "Please select a background color scheme:" <<endl<< "1. White" <<endl<< "2. Black" <<endl<< "3. Red"
+			 <<endl<< "4. Pink" <<endl<< "5. Yellow" <<endl<< "6. Green" <<endl<< "7. Sky" <<endl<< "8. Lavender" <<endl;
+		cin >> scheme;
+		enum color {white = 1, black, red, pink, yellow, green, sky, lavender};
+		switch (scheme) {
+			case white: system("color f0");
+				break;
+			case black: system("color 0f");
+				break;
+			case red: system("color 4f");
+				break;
+			case pink: system("color c0");
+				break;
+			case yellow: system("color 60");
+				break;
+			case green: system("color 2f");
+				break;
+			case sky: system("color 9f");
+				break;
+			case lavender: system("color df");
+				break;
+		}
+		this->graphicsMenu();
 		system("cls");
 	}
 }
