@@ -23,11 +23,12 @@ public:
 	void setSprite();
 	
 	int getLineType();
+	void setLineType(int);
 	int getHoleType();
 
 private:
-	int lineType;
-	int holeType;
+	int lineType = 1;
+	int holeType = 3;
 	char img[frameSize];
 	int imgPos[frameSize][2];
 

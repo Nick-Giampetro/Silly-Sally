@@ -27,6 +27,7 @@ void run(engine &g) {
 
 
     int counter = 0;
+    //system("pause");
 
     while (g.getLifeStatus())
     {       

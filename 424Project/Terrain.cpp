@@ -1,10 +1,11 @@
 #include "Terrain.h"
+#include <iostream>
 
 Terrain::Terrain() {
 
-	//itial hole spawn at hole number 3 (the middle of the screen) with line type 1
-	holeType = 3;
-	lineType = 1;
+	//initial hole spawn at hole number 3 (the middle of the screen) with line type 1
+	holeType = getHoleType();
+	lineType = getLineType();
 	this->setPos(0, 0);
 	this->setVel(1, 0);
 
@@ -17,7 +18,7 @@ Terrain::Terrain() {
 Terrain::Terrain(int prevType) {
 
 
-	lineType = 1;
+	lineType = getLineType();
 	this->setPos(0, 0);
 	this->setVel(1, 0);
 
@@ -61,7 +62,7 @@ char Terrain::spriteData(int I, int J) {
 
 	//defines the type of line that will print once the game is played for so long, starts at case 1
 	
-	for (int j = 0; j < lineLength; j++) {
+	for (int j = 0; j < frameSize; j++) {
 		if (imgPos[j][0] == I && imgPos[j][1] == J)
 			return img[j];
 	}
@@ -76,17 +77,17 @@ void Terrain::setSprite() {
 
 	char temp;
 
-	switch (lineType)
+	switch (getLineType())
 	{
 	case 1: temp = '-';
 		break;
-	case 2: temp = '~';
+	case 2: temp = '=';
 		break;
-	case 3: temp = '=';
+	case 3: temp = '+';
 		break;
 	case 4: temp = '#';
 		break;
-	case 5:  temp = '*';
+	case 5: temp = '*';
 		break;
 	}
 
@@ -96,7 +97,7 @@ void Terrain::setSprite() {
 		//sets the hole
 		for (; j < (fsdf(1)) && i >= fsdf(getHoleType() - 1); j++, i++) {
 			img[i] = ' ';
-			i++;
+			
 		}
 		//accounts for the extra character that would appear after the hole if at hole number 5
 		if (getHoleType() != 5 || i < fsdf(4)) {
@@ -108,6 +109,10 @@ void Terrain::setSprite() {
 
 int Terrain::getLineType() {
 	return lineType;
+}
+
+void Terrain::setLineType(int l) {
+	lineType = l;
 }
 
 int Terrain::getHoleType() {
