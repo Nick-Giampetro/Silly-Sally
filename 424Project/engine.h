@@ -17,18 +17,23 @@ public:
 	// where the player, and terrain objects are initiallized at the start of the game.
 	engine();
 
+
 	//
 	engine(int, char);
 	
+
 	// used to generate a frame when called based on the current 
 	void frameGen();
 
 	// used to update the objects to the next frame
 	void frameStepper();
 
-	// used to output frames
+	// used to generate initial frame
 	void frameOutput();
-	
+
+	//
+	void frameUpdate();
+
 	//for returning alive status
 	bool getLifeStatus();
 
@@ -43,12 +48,14 @@ private:
 	Sally player;
 
 	// counter of the current frame in time
-	int frameStep, fps ;
 
-	
+	int frameStep, fps ;
 
 	// the array that contains the total frame image
 	char frameImg[frameSize][frameSize];
+
+	// contains the information of the previous frame;
+	char pFrameImg[frameSize][frameSize];
 
 	// changes to false when the player looses
 	bool isAlive ;

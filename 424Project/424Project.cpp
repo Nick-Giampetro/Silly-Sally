@@ -29,31 +29,29 @@ void run(engine &g) {
     int counter = 0;
     //system("pause");
 
+    system("color 3f");
+
+    //output the frame
+    g.frameOutput();
+
     while (g.getLifeStatus())
     {       
-        system("cls");
-        system("color 3f");
-
-        //make the frame
-        g.frameGen();
-
-        //output the frame
-        g.frameOutput();
-       
-        //takes playerinput
+        //system("cls");
+      
         g.playerInput();
-       
-        //make next frame
+
+        //step objects
         g.frameStepper();
 
-        Sleep(250);
+        Sleep(100);
+        
+        //u[dates frame image
+        g.frameUpdate();
 
         counter++;
     }
 
     cout << counter << endl ;
-
-    system("pause");
     
 }
 
@@ -61,23 +59,26 @@ void test(engine& g) {
 
     int count = 0;
 
-    for (int i = 0; i < 50; i++) {
+    system("color 3f");
 
-        cout << ++count << endl ;
+    //output the frame
+    g.frameOutput();
 
-        //make the frame
-        g.frameGen();
+    for (int i = 0; i < 2; i++) {
 
-        //output the frame
-        g.frameOutput();
+       // cout << ++count << endl ;
 
-        //takes playerinput
-        // g.playerInput();
+        //system("cls");
 
-        //make next frame
+        g.playerInput();
+
+        //step objects
         g.frameStepper();
 
-        cout << endl; 
+        Sleep(250);
+
+        //u[dates frame image
+        g.frameUpdate();
 
     }
 

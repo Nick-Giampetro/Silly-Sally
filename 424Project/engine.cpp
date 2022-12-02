@@ -112,12 +112,38 @@ void engine::frameStepper() {
 
 void engine::frameOutput() {
 
+	this->frameGen();
+
 	for (int i = 0; i < frameSize; i++) {
 		for (int j = 0; j < frameSize; j++) {
 			cout << frameImg[i][j];
 		}
 		cout << "\n";
 	}
+
+	for (int i = 0; i < frameSize; i++) 
+		for (int j = 0; j < frameSize; j++) 
+			pFrameImg[i][j] = frameImg[i][j];
+
+}
+
+void engine::frameUpdate() {
+
+	this->frameGen();
+
+	for (int i = 0; i < frameSize; i++) 
+		for (int j = 0; j < frameSize; j++) 
+			if(pFrameImg[i][j] != frameImg[i][j]){
+				HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+				COORD pos = { j, i };
+				SetConsoleCursorPosition(hConsole, pos);
+				cout << frameImg[i][j];
+			}
+				
+	for (int i = 0; i < frameSize; i++)
+		for (int j = 0; j < frameSize; j++)
+			pFrameImg[i][j] = frameImg[i][j];
+
 }
 
 bool engine::getLifeStatus() {
