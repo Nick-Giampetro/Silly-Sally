@@ -17,7 +17,7 @@ Sally::~Sally()
 	cout << "We lost Sally!" << endl;
 }
 
-
+// goes through the the imgPos array to see if sally is located at the coordinates I,J passed to the function
 bool Sally::isLocatedAt(int I, int J) {
 	
 	for (int i = 0; i < sallySizeI; i++)
@@ -29,6 +29,7 @@ bool Sally::isLocatedAt(int I, int J) {
 	return false;
 }
 
+// creates the imgPos array to define where sally is located in the overall game X Y coordinates
 void Sally::defineShape() {
 	for (int i = 0; i < sallySizeI; i++)
 		for (int j = 0; j < sallySizeJ; j++) {
@@ -37,7 +38,7 @@ void Sally::defineShape() {
 		}
 }
 
-
+// returns the sprite of sally at a the passed global coordinates I,J
 char Sally::spriteData(int I,int J) {
 	for (int i = 0; i < sallySizeI; i++)
 		for (int j = 0; j < sallySizeJ; j++) {
@@ -46,6 +47,7 @@ char Sally::spriteData(int I,int J) {
 		}
 }
 
+// initiallizes the img array to be the sally sprite
 void Sally::setSprite() {
 	for (int i = 0; i < sallySizeI; i++)
 		for (int j = 0; j < sallySizeJ; j++)
