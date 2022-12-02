@@ -158,7 +158,7 @@ void Menu::run()
 
 		Sleep(1000/game.getFps());
 
-		//u[dates frame image
+		//updates frame image
 		game.frameUpdate();
 
 		score++;
