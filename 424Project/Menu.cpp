@@ -105,12 +105,14 @@ void Menu::graphicsMenu()
 	switch (choice) 
 	{
 	case 1:
-		int scheme;
+		system("cls");
+
 		cout << "Please select a background color scheme:" <<endl<< "1. White" <<endl<< "2. Black" <<endl<< "3. Red"
 			 <<endl<< "4. Pink" <<endl<< "5. Yellow" <<endl<< "6. Green" <<endl<< "7. Sky" <<endl<< "8. Lavender" <<endl;
-		cin >> scheme;
+		cin >> choice;
+
 		enum color {white = 1, black, red, pink, yellow, green, sky, lavender};
-		switch (scheme) {
+		switch (choice) {
 			case white: system("color f0");
 				break;
 			case black: system("color 0f");
@@ -129,7 +131,7 @@ void Menu::graphicsMenu()
 				break;
 		}
 		this->graphicsMenu();
-		system("cls");
+		
 	}
 }
 
