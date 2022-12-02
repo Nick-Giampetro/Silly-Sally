@@ -33,6 +33,8 @@ void Menu::mainMenu()
 	while(!quit)
 	{
 		do {
+			system("cls");
+
 			cout << "(maximise window for best game experience.)" << endl;
 			cout << "Silly Sally game menu:" << endl;
 			cout << "1. Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
@@ -99,7 +101,7 @@ void Menu::graphicsMenu()
 {
 	system("cls");
 
-	cout << "Graphics Options:" << endl << "1. color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl<<"4. Back";
+	cout << "Graphics Options:" << endl << "1. Color" << endl<<"2. Wall Sprite"<<endl<<"3. Obsticle Sprite"<<endl<<"4. Back"<<endl;
 
 	cin >> choice;
 	switch (choice) 
@@ -111,7 +113,12 @@ void Menu::graphicsMenu()
 			 <<endl<< "4. Pink" <<endl<< "5. Yellow" <<endl<< "6. Green" <<endl<< "7. Sky" <<endl<< "8. Lavender" <<endl;
 		cin >> choice;
 
-		enum color {white = 1, black, red, pink, yellow, green, sky, lavender};
+		while (choice < 1 || choice > 8) {
+			cout << "Please enter a valid number" << endl;
+			cin >> choice;
+		}
+
+		enum color {white = 1, black, red, pink, yellow, green, sky, purple};
 		switch (choice) {
 			case white: system("color f0");
 				break;
@@ -127,11 +134,33 @@ void Menu::graphicsMenu()
 				break;
 			case sky: system("color 9f");
 				break;
-			case lavender: system("color df");
+			case purple: system("color 5f");
 				break;
 		}
 		this->graphicsMenu();
-		
+		break;
+
+	case 2:
+		system("cls");
+		char c;
+
+		cout << "Please choose any character to represent your wall: ";
+		cin >> c;
+
+		while (c == ' ') {
+			cout << "Please enter a valid character: ";
+			cin >> c;
+		}
+		wallSprite = c;
+		this->graphicsMenu();
+		break;
+
+	case 3:
+		system("cls");
+		break;
+	case 4:
+		this->mainMenu();
+		break;
 	}
 }
 
