@@ -7,8 +7,6 @@ using namespace std;
 
 class Terrain : public Entity
 {
-
-	static const int frameSize = 50;
 	static const int lineLength = 5;
 
 public:
@@ -31,7 +29,6 @@ private:
 	int holeType = 3;
 	char img[frameSize];
 	int imgPos[frameSize][2];
-
 
 };
 

@@ -25,7 +25,7 @@ Wall::Wall(int x, int y) {
 bool Wall::isLocatedAt(int I, int J) {
 
 	//returns the location of walls in the frame
-	for (int j = 0; j < framesize; j++)
+	for (int j = 0; j < frameSize; j++)
 	{
 		if (imgPos[j][0] == I && imgPos[j][1] == J)
 			return true;
@@ -37,7 +37,7 @@ bool Wall::isLocatedAt(int I, int J) {
 char Wall::spriteData(int I,int J) 
 {
 	//This sends the wall sprite back
-	for (int j = 0; j < framesize; j++)
+	for (int j = 0; j < frameSize; j++)
 	{
 		if (imgPos[j][0] == I && imgPos[j][1] == J)
 			return wallSprite[j];
@@ -49,7 +49,7 @@ char Wall::spriteData(int I,int J)
 void Wall::setSprite()
 {
 	//This allows for the program to change the wall sprite while running (maybe a graphic setting?)
-	for (int i = 0; i < framesize; i++)
+	for (int i = 0; i < frameSize; i++)
 	{
 		wallSprite[i] = '*';
 	}
@@ -59,7 +59,7 @@ void Wall::setSprite()
 void Wall::defineShape()
 {
 	//creates the wall sprite in the frame so that location data can be extracted for master frame
-	for (int j = 0; j < framesize; j++) {
+	for (int j = 0; j < frameSize; j++) {
 		imgPos[j][0] = this->getPosX() + j;
 		imgPos[j][1] = this->getPosY() ;
 	}

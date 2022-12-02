@@ -1,5 +1,4 @@
 #include "engine.h"
-#include <Windows.h>
 
 
 //sets starting entities
@@ -98,7 +97,7 @@ bool engine::getLifeStatus() {
 
 void engine::playerInput() {
 
-    if (GetAsyncKeyState(VK_LSHIFT))
+    if (GetAsyncKeyState(VK_LCONTROL))
     {
 		player.setVel(player.getVelX() * -1, player.getVelY() * -1);
     }

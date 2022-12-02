@@ -45,6 +45,8 @@ void run(engine &g) {
         //make next frame
         g.frameStepper();
 
+        Sleep(500);
+
         counter++;
     }
 

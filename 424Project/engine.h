@@ -1,19 +1,17 @@
 #pragma once
 
 #include <vector>
+#include <Windows.h>
 #include "Entity.h" 
 #include "Terrain.h"
 #include "Sally.h"
 #include "Wall.h"
-#include <Windows.h>
+#include "frameDefinition.h"
 
 using namespace std;
 
-class engine
+class engine : public frameDefinition
 {
-
-	// size of the frame image
-	static const int frameSize = 50;
 
 public:
 	// where the player, and terrain objects are initiallized at the start of the game.

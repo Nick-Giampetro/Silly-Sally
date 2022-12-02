@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="engine.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="frameDefinition.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Sally.h" />
     <ClInclude Include="Terrain.h" />
