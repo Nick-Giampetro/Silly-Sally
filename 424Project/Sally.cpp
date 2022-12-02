@@ -1,5 +1,6 @@
 #include "Sally.h"
 
+// constructor
 Sally::Sally()
 {
 	cout << "Sally Lives!" << endl;
@@ -9,21 +10,13 @@ Sally::Sally()
 	this->defineShape();
 	
 }
-Sally::Sally(int s)
-{
-	cout << "Sally Lives!" << endl;
 
-	this->setVel(0, s);
-	this->setSprite();
-	this->defineShape();
-
-}
-
-
+// deconstructor
 Sally::~Sally()
 {
 	cout << "We lost Sally!" << endl;
 }
+
 
 bool Sally::isLocatedAt(int I, int J) {
 	
