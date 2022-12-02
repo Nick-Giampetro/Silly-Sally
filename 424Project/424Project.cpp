@@ -43,7 +43,7 @@ void run(engine &g) {
         //step objects
         g.frameStepper();
 
-        Sleep(250);
+        Sleep(100);
         
         //u[dates frame image
         g.frameUpdate();
