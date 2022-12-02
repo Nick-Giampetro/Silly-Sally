@@ -32,6 +32,7 @@ void run(engine &g) {
     while (g.getLifeStatus())
     {       
         system("cls");
+        system("color 3f");
 
         //make the frame
         g.frameGen();

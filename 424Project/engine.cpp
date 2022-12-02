@@ -87,7 +87,7 @@ void engine::frameOutput() {
 		for (int j = 0; j < frameSize; j++) {
 			cout << frameImg[i][j];
 		}
-		cout << endl;
+		cout << "\n";
 	}
 }
 
@@ -97,7 +97,7 @@ bool engine::getLifeStatus() {
 
 void engine::playerInput() {
 
-    if (GetAsyncKeyState(VK_LCONTROL))
+    if (GetAsyncKeyState(VK_SPACE))
     {
 		player.setVel(player.getVelX() * -1, player.getVelY() * -1);
     }
