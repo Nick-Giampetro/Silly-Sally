@@ -12,14 +12,13 @@ class Sally : public Entity
 
 public:
 	Sally();
-	Sally(int);
 	~Sally();
 
-	// virtual functions
-	bool isLocatedAt(int,int);
-	void defineShape();
-	void setSprite();
-	char spriteData(int,int);
+	// virtual functions from entity which need to be initialized
+	bool isLocatedAt(int,int);		// returns true if sally is located at a coordinate
+	void defineShape();				// defines the coordinates of each sprite cell location in sally
+	void setSprite();				// creates the sally sprite
+	char spriteData(int,int);		// returns the character of sally at a given location 
 
 	
 

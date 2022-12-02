@@ -9,15 +9,6 @@ Sally::Sally()
 	this->defineShape();
 	
 }
-Sally::Sally(int s)
-{
-	cout << "Sally Lives!" << endl;
-
-	this->setVel(0, s);
-	this->setSprite();
-	this->defineShape();
-
-}
 
 
 Sally::~Sally()
