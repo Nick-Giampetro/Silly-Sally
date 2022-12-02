@@ -32,8 +32,9 @@ void Menu::mainMenu()
 {
 	while(!quit)
 	{
+		system("cls");
 		do {
-			system("cls");
+			
 
 			cout << "(maximise window for best game experience.)" << endl;
 			cout << "Silly Sally game menu:" << endl;
@@ -43,8 +44,8 @@ void Menu::mainMenu()
 			cin >> choice;
 			if (choice != 1 && choice != 2 && choice != 3 && choice != 4)
 			{
-				cout << "Plese select a valid option" << endl;
 				system("cls");
+				cout << "Plese select a valid option" << endl;
 			}
 
 		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
@@ -101,7 +102,7 @@ void Menu::graphicsMenu()
 {
 	system("cls");
 
-	cout << "Graphics Options:" << endl << "1. Color" << endl<<"2. Wall Sprite"<<endl<<"3. Obsticle Sprite"<<endl<<"4. Back"<<endl;
+	cout << "Graphics Options:" << endl << "1. Color" << endl<<"2. Wall Sprite"<<endl<<"3. Back"<<endl;
 
 	cin >> choice;
 	switch (choice) 
@@ -154,11 +155,7 @@ void Menu::graphicsMenu()
 		wallSprite = c;
 		this->graphicsMenu();
 		break;
-
 	case 3:
-		system("cls");
-		break;
-	case 4:
 		this->mainMenu();
 		break;
 	}
@@ -169,8 +166,6 @@ void Menu::run()
 	engine game(speedSetting,wallSprite);
 
 	int score = 0;
-	//system("pause");
-
 	
 
 	//output the frame
