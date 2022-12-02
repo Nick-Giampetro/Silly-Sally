@@ -115,7 +115,7 @@ void engine::frameOutput() {
 	// generates the current inital frame
 	this->frameGen();
 
-
+	// outputs the inital frame to console
 	for (int i = 0; i < frameSize; i++) {
 		for (int j = 0; j < frameSize; j++) {
 			cout << frameImg[i][j];
@@ -123,6 +123,7 @@ void engine::frameOutput() {
 		cout << "\n";
 	}
 
+	// sets current frame data to previous frame data
 	for (int i = 0; i < frameSize; i++) 
 		for (int j = 0; j < frameSize; j++) 
 			pFrameImg[i][j] = frameImg[i][j];
@@ -131,35 +132,42 @@ void engine::frameOutput() {
 
 void engine::frameUpdate() {
 
+	// generates the next frame
 	this->frameGen();
 
+	// compares prevous frame to current frame to only print changes
 	for (int i = 0; i < frameSize; i++) 
 		for (int j = 0; j < frameSize; j++) 
+			// confirms that there is a change in frames
 			if(pFrameImg[i][j] != frameImg[i][j]){
-				HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-				COORD pos = { j, i };
-				SetConsoleCursorPosition(hConsole, pos);
+				HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);		// --------------------------------------------------------------------------------
+				COORD pos = { j, i };									// These lines of code move the cursor to the part of the console that needs edited
+				SetConsoleCursorPosition(hConsole, pos);				// --------------------------------------------------------------------------------
 				cout << frameImg[i][j];
 			}
-				
+			
+	// updates previous frame
 	for (int i = 0; i < frameSize; i++)
 		for (int j = 0; j < frameSize; j++)
 			pFrameImg[i][j] = frameImg[i][j];
 
 }
 
+// returns isAlive
 bool engine::getLifeStatus() {
 	return isAlive;
 }
 
+// checks for space bar input
 void engine::playerInput() {
 
     if (GetAsyncKeyState(VK_SPACE))
     {
-		player.setVel(player.getVelX() * -1, player.getVelY() * -1);
+		player.setVel(player.getVelX() * -1, player.getVelY() * -1);	// changes velocity of sally when space bar is pressed
     }
 }
 
+// returns the fps value
 int engine::getFps() {
 	return fps;
 }
