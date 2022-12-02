@@ -31,7 +31,7 @@ public:
 	// used to generate initial frame
 	void frameOutput();
 
-	//
+	// used to refresh what is displayed to the frame
 	void frameUpdate();
 
 	//for returning alive status
@@ -39,6 +39,9 @@ public:
 
 	//for recording player key inputs
 	void playerInput();
+
+	//gets ideal frame per second
+	int getFps();
 
 
 private:
