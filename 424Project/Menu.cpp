@@ -29,7 +29,7 @@ void Menu::mainMenu()
 		do {
 
 			cout << "Silly Sally game menu:" << endl;
-			cout << "1.Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
+			cout << "1. Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
 
 			// waits for player input
 			cin >> choice;
@@ -43,6 +43,7 @@ void Menu::mainMenu()
 
 		switch (choice) {
 		case 1:
+			system("cls");
 			run();
 			system("cls");
 			break;
@@ -72,6 +73,8 @@ void Menu::gameOptions()
 	switch (choice)
 	{
 	case 1:
+		system("cls");
+		cout << "1. Normal" << endl;
 		cin >> speedSetting;
 		this->gameOptions();
 		break;
@@ -89,7 +92,7 @@ void Menu::gameOptions()
 void Menu::graphicsMenu()
 {
 	system("cls");
-	cout << "Graphics Options:" << endl << "1. color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl;
+	cout << "Graphics Options:" << endl << "1. color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl<<"4. Back";
 	cin >> choice;
 	switch (choice) 
 	{
@@ -126,6 +129,11 @@ void Menu::run()
 
 		counter++;
 	}
+	//end game screen
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD pos = {frameSize/3,frameSize/2};
+	SetConsoleCursorPosition(hConsole, pos);
+	cout << "Your score was: " << counter << endl;
 
-	cout << counter << endl;
+	system("pause");
 }
