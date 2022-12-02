@@ -17,8 +17,8 @@ engine::engine() {
 	player.setPos(frameSize - frameSize / 5, frameSize / 2);
 
 	// initializing walls
-	Wall temp1(0,0);
-	Wall temp2(0 , frameSize - 1);
+	Wall temp1(0,0, '*');
+	Wall temp2(0 , frameSize - 1,'*');
 	bounds.push_back(temp1);
 	bounds.push_back(temp2);
 
@@ -26,6 +26,35 @@ engine::engine() {
 	// initiallizing first obstacle
 	Terrain temp;
 	obstacles.push_back(temp);
+}
+
+engine::engine(int s, char w) {
+	// initializing variables
+	frameStep = 0;
+	fps = 10;
+	isAlive = true;
+
+	for (int i = 0; i < frameSize; i++)
+		for (int j = 0; j < frameSize; j++)
+			frameImg[i][j] = ' ';
+
+	// initiallizing player
+	player.setPos(frameSize - frameSize / 5, frameSize / 2);
+
+	// initializing walls
+	Wall temp1(0, 0, w);
+	Wall temp2(0, frameSize - 1, w);
+	bounds.push_back(temp1);
+	bounds.push_back(temp2);
+
+
+	// initiallizing first obstacle
+	Terrain temp;
+	obstacles.push_back(temp);
+
+	//set sally speed
+	player.setVel(0, s);
+
 }
 
 

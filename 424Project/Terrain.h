@@ -29,6 +29,7 @@ private:
 	int holeType = 3;
 	char img[frameSize];
 	int imgPos[frameSize][2];
+	int terrainSpeed = 1;
 
 };
 

@@ -6,6 +6,7 @@ Terrain::Terrain() {
 	//initial hole spawn at hole number 3 (the middle of the screen) with line type 1
 	holeType = getHoleType();
 	lineType = getLineType();
+	terrainSpeed = 1;
 	this->setPos(0, 0);
 	this->setVel(1, 0);
 
@@ -17,7 +18,7 @@ Terrain::Terrain() {
 
 Terrain::Terrain(int prevType) {
 
-
+	terrainSpeed = 1;
 	lineType = getLineType();
 	this->setPos(0, 0);
 	this->setVel(1, 0);

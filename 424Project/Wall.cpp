@@ -5,18 +5,18 @@ Wall::Wall() {
 	setVel(0, 0);
 	
 	//initalize array of 0 so IDE is happy
-	this->setSprite();
+	this->setSprite(); //default wall sprite
 	this->defineShape();
 }
 
 Wall::~Wall() {}
 
-Wall::Wall(int x, int y) {
+Wall::Wall(int x, int y, char w) {
 	
 	this->setPos(x, y);
 
 	//still making IDE happy
-	this->setSprite();
+	this->setSprite(w);
 	this->defineShape();
 
 }
@@ -46,14 +46,24 @@ char Wall::spriteData(int I,int J)
 
 }
 
-void Wall::setSprite()
+void Wall::setSprite(char w)
+{
+	//This allows for the program to change the wall sprite while running (maybe a graphic setting?)
+	for (int i = 0; i < frameSize; i++)
+	{
+		wallSprite[i] = w;
+	}
+	
+}
+
+void Wall::setSprite() //default
 {
 	//This allows for the program to change the wall sprite while running (maybe a graphic setting?)
 	for (int i = 0; i < frameSize; i++)
 	{
 		wallSprite[i] = '*';
 	}
-	
+
 }
 
 void Wall::defineShape()

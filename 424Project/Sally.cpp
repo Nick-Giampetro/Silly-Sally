@@ -9,6 +9,16 @@ Sally::Sally()
 	this->defineShape();
 	
 }
+Sally::Sally(int s)
+{
+	cout << "Sally Lives!" << endl;
+
+	this->setVel(0, s);
+	this->setSprite();
+	this->defineShape();
+
+}
+
 
 Sally::~Sally()
 {
@@ -54,3 +64,4 @@ void Sally::setSprite() {
 	img[3][0] = '<'; img[3][1] = '|'; img[3][2] = '|'; img[3][3] = '>';
 	img[4][1] = '^'; img[4][2] = '^';
 }
+

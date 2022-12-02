@@ -16,6 +16,9 @@ class engine : public frameDefinition
 public:
 	// where the player, and terrain objects are initiallized at the start of the game.
 	engine();
+
+	//
+	engine(int, char);
 	
 	// used to generate a frame when called based on the current 
 	void frameGen();
@@ -41,7 +44,9 @@ private:
 
 	// counter of the current frame in time
 	int frameStep, fps ;
+
 	
+
 	// the array that contains the total frame image
 	char frameImg[frameSize][frameSize];
 

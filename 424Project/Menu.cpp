@@ -10,44 +10,45 @@ Menu::~Menu()
 {
 }
 
-void Menu::startup(engine &g)
+void Menu::startup()
 {
 	cout << "Wellcome to Silly Sally!" << endl;
 	Sleep(2000);
 	system("cls");
-	mainMenu(g);
+	mainMenu();
 }
 
-void Menu::mainMenu(engine &g)
+void Menu::mainMenu()
 {
 	while(!quit)
 	{
-		while (choice != 1 && choice != 2 && choice != 3 && choice != 4) {
+		do {
 
 			cout << "Silly Sally game menu:" << endl;
 			cout << "1.Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
 
-
+			// waits for player input
 			cin >> choice;
 			if (choice != 1 && choice != 2 && choice != 3 && choice != 4)
 			{
 				cout << "Plese select a valid option" << endl;
 				system("cls");
 			}
-		}
+
+		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
+
 		switch (choice) {
 		case 1:
-			//call run function
+			run();
 			system("cls");
-			choice = 0;
 			break;
 		case 2:
-			gameOptions(g);
+			gameOptions();
 			system("cls");
 			choice = 0;
 			break;
 		case 3:
-			graphicsMenu(g);
+			graphicsMenu();
 			system("cls");
 			choice = 0;
 		case 4://just finish the program
@@ -59,7 +60,7 @@ void Menu::mainMenu(engine &g)
 
 }
 
-void Menu::gameOptions(engine &g)
+void Menu::gameOptions()
 {
 	system("cls");
 	cout << "Game Options:" << endl << "1. Difficulty" << endl;
@@ -77,7 +78,7 @@ void Menu::gameOptions(engine &g)
 	
 }
 
-void Menu::graphicsMenu(engine &g)
+void Menu::graphicsMenu()
 {
 	system("cls");
 	cout << "Graphics Options:" << endl << "1. color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl;
@@ -88,6 +89,7 @@ void Menu::graphicsMenu(engine &g)
 	}
 }
 
-void Menu::run(engine&)
+void Menu::run()
 {
+
 }

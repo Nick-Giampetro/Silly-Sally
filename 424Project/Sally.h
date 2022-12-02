@@ -12,6 +12,7 @@ class Sally : public Entity
 
 public:
 	Sally();
+	Sally(int);
 	~Sally();
 
 	// virtual functions
@@ -19,6 +20,8 @@ public:
 	void defineShape();
 	void setSprite();
 	char spriteData(int,int);
+
+	
 
 private:
 
