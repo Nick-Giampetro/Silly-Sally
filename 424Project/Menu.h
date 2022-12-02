@@ -1,8 +1,9 @@
 #pragma once
 #include"engine.h"
+#include"frameDefinition.h"
 #include <iostream>
 
-class Menu
+class Menu : public frameDefinition
 {
 public:
 	Menu();
@@ -19,7 +20,7 @@ private:
 	bool quit;
 	int speedSetting;
 	char wallSprite;
-
+	int winScore;
 	
 
 

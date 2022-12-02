@@ -6,6 +6,7 @@ Menu::Menu()
 	quit = false;
 	speedSetting = 1;
 	wallSprite = '*';
+	winScore = 36191;
 }
 
 Menu::~Menu()
@@ -15,6 +16,11 @@ Menu::~Menu()
 void Menu::startup()
 {
 	system("color 3f");
+
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD pos = { frameSize / 4,frameSize / 4 };
+	SetConsoleCursorPosition(hConsole, pos);
+	
 
 	cout << "Wellcome to Silly Sally!" << endl;
 	Sleep(2000);
@@ -27,9 +33,9 @@ void Menu::mainMenu()
 	while(!quit)
 	{
 		do {
-
+			cout << "(maximise window for best game experience.)" << endl;
 			cout << "Silly Sally game menu:" << endl;
-			cout << "1.Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
+			cout << "1. Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
 
 			// waits for player input
 			cin >> choice;
@@ -43,6 +49,7 @@ void Menu::mainMenu()
 
 		switch (choice) {
 		case 1:
+			system("cls");
 			run();
 			system("cls");
 			break;
@@ -72,6 +79,8 @@ void Menu::gameOptions()
 	switch (choice)
 	{
 	case 1:
+		system("cls");
+		cout << "1. Easy" << endl << "2. Medium" << endl << "3. Hard" << endl << "4. Silly" << endl << "Or enter at your own risk..." << endl;
 		cin >> speedSetting;
 		this->gameOptions();
 		break;
@@ -89,7 +98,10 @@ void Menu::gameOptions()
 void Menu::graphicsMenu()
 {
 	system("cls");
-	cout << "Graphics Options:" << endl << "1. Color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl;
+
+
+	cout << "Graphics Options:" << endl << "1. color" << endl<<"2. wall sprite"<<endl<<"3. obsticle sprite"<<endl<<"4. Back";
+
 	cin >> choice;
 	switch (choice) 
 	{
@@ -126,7 +138,7 @@ void Menu::run()
 {
 	engine game(speedSetting,wallSprite);
 
-	int counter = 0;
+	int score = 0;
 	//system("pause");
 
 	
@@ -134,7 +146,7 @@ void Menu::run()
 	//output the frame
 	game.frameOutput();
 
-	while (game.getLifeStatus())
+	while (game.getLifeStatus() && score < winScore)
 	{
 		//system("cls");
 
@@ -148,8 +160,32 @@ void Menu::run()
 		//u[dates frame image
 		game.frameUpdate();
 
-		counter++;
+		score++;
 	}
+	
+	//end game screen
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD pos = { frameSize / 3,frameSize / 2 };
+	SetConsoleCursorPosition(hConsole, pos);
+	
+	cout << "Your score was: " << score << endl;
 
-	cout << counter << endl;
+	pos = { frameSize / 4,frameSize / 2 + 1 };
+	SetConsoleCursorPosition(hConsole, pos);
+
+	if (score == winScore)
+	{
+		pos = { frameSize / 5,frameSize / 2 - 1 };
+		SetConsoleCursorPosition(hConsole, pos);
+		cout << "Congrats, you reached Sally's actual flight altitude in feet." << endl;
+	}
+	
+
+	
+		
+	
+	pos = { frameSize / 4,frameSize / 2 + 1 };
+	SetConsoleCursorPosition(hConsole, pos);
+	Sleep(2000);
+	system("pause");
 }
