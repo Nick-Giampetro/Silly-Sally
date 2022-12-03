@@ -69,7 +69,7 @@ void Menu::mainMenu()
 			graphicsMenu();
 			system("cls");
 			
-		case 4: 
+		case 4: //instructions for how to play the game
 			system("cls");
 			cout << "The objective of the game is to pass through the gaps with the rocket and to get as high as you can." << endl 
 				<< "You win when the altitude surpasses 36191 ft and you travel at ~7 ft/s so...good luck. Use the spacebar to" << endl
@@ -79,6 +79,7 @@ void Menu::mainMenu()
 			Sleep(3000);
 			system("pause");
 			this->mainMenu();
+
 		case 5: //just finish the program
 			quit = true;
 			break;
