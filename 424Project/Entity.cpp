@@ -39,7 +39,7 @@ int Entity::getVelY() {
 	return vY;
 }
 
-// returns the a character from an entity object at a specific location
+// returns a character from an entity object at a specific location
 char Entity::getSprite(int I, int J, char cImg) {
 	if (this->isLocatedAt(I, J))
 		return this->spriteData(I, J);
