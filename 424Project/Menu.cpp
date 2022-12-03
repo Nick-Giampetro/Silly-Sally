@@ -39,12 +39,13 @@ void Menu::mainMenu()
 		do {
 			
 
-			cout << "(maximise window for best game experience.)" << endl;
+			cout << "(Maximize window for best game experience.)" << endl;
 			cout << "Silly Sally game menu:" << endl;
 			cout << "1. Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Tutorial" << endl << "5. Quit" << endl;
 
 			// waits for player input, will loop and clear previous statements if input is not valid
 			cin >> choice;
+
 			if (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice !=5)
 			{
 				system("cls");

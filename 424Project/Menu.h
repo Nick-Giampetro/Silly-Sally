@@ -16,7 +16,7 @@ public:
 	void run();
 
 private:
-	int choice;
+	char choice;
 	bool quit;
 	unsigned int speedSetting;
 	char wallSprite;
