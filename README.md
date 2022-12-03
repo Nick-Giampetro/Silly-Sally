@@ -5,7 +5,7 @@ This program only needs the concole. It also utalizes the windows API so not sur
 issues compiling with another OS. We have also noticed decreased framerates when some laptops are in 
 power saving mode so that is something to note. We think it has been fixed with the more efficent frame 
 output function. (orignially the whole frame was printed to screen every time but now only things that
-move do.)
+move do.) Also, cin struggles to accept char when it is set to take int so don't do that.
 
 
 #       Win Condition       #
