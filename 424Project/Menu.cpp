@@ -41,17 +41,17 @@ void Menu::mainMenu()
 
 			cout << "(maximise window for best game experience.)" << endl;
 			cout << "Silly Sally game menu:" << endl;
-			cout << "1. Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Quit" << endl;
+			cout << "1. Play" << endl << "2. Game Options" << endl << "3. Graphics Options" << endl << "4. Tutorial" << endl << "5. Quit" << endl;
 
 			// waits for player input, will loop and clear previous statements if input is not valid
 			cin >> choice;
-			if (choice != 1 && choice != 2 && choice != 3 && choice != 4)
+			if (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice !=5)
 			{
 				system("cls");
 				cout << "Plese select a valid option" << endl << endl;
 			}
 
-		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
+		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5);
 
 		switch (choice) {
 		case 1: //runs the game
@@ -68,7 +68,17 @@ void Menu::mainMenu()
 			graphicsMenu();
 			system("cls");
 			
-		case 4: //just finish the program
+		case 4: 
+			system("cls");
+			cout << "The objective of the game is to pass through the gaps with the rocket and to get as high as you can." << endl 
+				<< "You win when the altitude surpasses 36191 ft and you travel at ~7 ft/s so...good luck. Use the spacebar to" << endl
+				<< "change direction. You lose if you hit the wall or the obstacle. Difficulty settings just increase the speed" << endl
+				<< "that sally moves at. The game breaks if you go above 4 because sally can noclip through the wall but we left" << endl
+				<< "that option in for fun. Enjoy and try not to rage quit so hard, your computer breaks." << endl;
+			Sleep(3000);
+			system("pause");
+			this->mainMenu();
+		case 5: //just finish the program
 			quit = true;
 			break;
 
