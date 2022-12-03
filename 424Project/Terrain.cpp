@@ -3,7 +3,7 @@
 
 Terrain::Terrain() {
 
-	//initial hole spawn at hole number 3 (the middle of the screen) with line type 1
+	//initial hole spawn at hole number 3 (the middle of the screen) with line type of -
 	holeType = getHoleType();
 	lineType = getLineType();
 	terrainSpeed = 1;
@@ -13,11 +13,11 @@ Terrain::Terrain() {
 	//initalize array of 0 so IDE is happy
 	this->setSprite();
 	this->defineShape();
-
 }
 
 Terrain::Terrain(int prevType) {
 
+	//current speed, line type, position, and speed
 	terrainSpeed = 1;
 	lineType = getLineType();
 	this->setPos(0, 0);
@@ -32,24 +32,25 @@ Terrain::Terrain(int prevType) {
 	while (holeType < 1 || holeType > 5) {
 		holeType = prevType + (rand() % 3 - 1);
 	}
-	
+	//outputs the terrain obstacle properly
 	this->setSprite();
 	this->defineShape();
 }
 
 Terrain::~Terrain() {}
 
+//goes through the the imgPos array to see if the terrain is located at the coordinates I,J passed to the function
 bool Terrain::isLocatedAt(int I, int J) {
 
-	
-		for (int j = 0; j < frameSize; j++) {
-			if (imgPos[j][0] == I && imgPos[j][1] == J)
-				return true;
-		}
+	for (int j = 0; j < frameSize; j++) {
+		if (imgPos[j][0] == I && imgPos[j][1] == J)
+			return true;
+	}
 
 	return false;
 }
 
+//creates the imgPos array to define where the terrain is located in the overall game X Y coordinates
 void Terrain::defineShape() {
 
 	for (int j = 0; j < frameSize; j++)
@@ -59,9 +60,8 @@ void Terrain::defineShape() {
 	}
 }
 
+//returns the character of the terrain at a the passed global coordinates I,J
 char Terrain::spriteData(int I, int J) {
-
-	//defines the type of line that will print once the game is played for so long, starts at case 1
 	
 	for (int j = 0; j < frameSize; j++) {
 		if (imgPos[j][0] == I && imgPos[j][1] == J)
@@ -71,26 +71,10 @@ char Terrain::spriteData(int I, int J) {
 
 void Terrain::setSprite() {
 
-	int j = 0;
-
 	//frame size divided-by five (fsdf) and then multiplied by an integer
 	auto fsdf = [](int a) -> int { return (frameSize / 5) * a; };
 
-	char temp;
-
-	switch (getLineType())
-	{
-	case 1: temp = '-';
-		break;
-	case 2: temp = '=';
-		break;
-	case 3: temp = '+';
-		break;
-	case 4: temp = '#';
-		break;
-	case 5: temp = '*';
-		break;
-	}
+	int j = 0;
 
 	//sets the line within the frame size
 	for (int i = 0; i < frameSize; i++) {
@@ -102,7 +86,7 @@ void Terrain::setSprite() {
 		}
 		//accounts for the extra character that would appear after the hole if at hole number 5
 		if (getHoleType() != 5 || i < fsdf(4)) {
-			img[i] = temp;
+			img[i] = getLineType();
 		}
 
 	}
@@ -112,7 +96,7 @@ int Terrain::getLineType() {
 	return lineType;
 }
 
-void Terrain::setLineType(int l) {
+void Terrain::setLineType(char l) {
 	lineType = l;
 }
 
