@@ -18,7 +18,7 @@ public:
 private:
 	int choice;
 	bool quit;
-	int speedSetting;
+	unsigned int speedSetting;
 	char wallSprite;
 	int winScore;
 	
