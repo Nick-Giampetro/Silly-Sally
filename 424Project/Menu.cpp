@@ -79,6 +79,7 @@ void Menu::mainMenu()
 			Sleep(3000);
 			system("pause");
 			this->mainMenu();
+			break;
 		case 5: //just finish the program
 			quit = true;
 			break;
